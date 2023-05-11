@@ -28,7 +28,7 @@
     @submit.prevent="addTodo"
     >
       <div class="event-adder mb-5">
-        <p class="control is-expanded mb-2">
+        <p class="control is-expanded">
           <input
             v-model="newEventTitle"
             class="input" 
@@ -36,7 +36,7 @@
             placeholder="Add event title"
             >
         </p>
-        <p class="control is-expanded mb-2">
+        <p class="control is-expanded">
           <input
             v-model="newEventAge"
             class="input" 
@@ -44,55 +44,7 @@
             placeholder="Add event age restriction"
             >
         </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventPrice"
-            class="input" 
-            type="text" 
-            placeholder="Add event sale price"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventGenre"
-            class="input" 
-            type="text" 
-            placeholder="Add event genre"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventPerformer"
-            class="input" 
-            type="text" 
-            placeholder="Add event performer"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventTime"
-            class="input" 
-            type="text"
-            placeholder="Add event date"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventVenue"
-            class="input" 
-            type="text" 
-            placeholder="Add event venue"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventInfo"
-            class="input" 
-            type="text" 
-            placeholder="Add event info"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
+        <p class="control is-expanded">
           <input
             v-model="newEventUrl"
             class="input" 
@@ -100,9 +52,49 @@
             placeholder="Add event sale url"
             >
         </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventTheme"
+            class="input" 
+            type="text" 
+            placeholder="Add event genre"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventPerformer"
+            class="input" 
+            type="text" 
+            placeholder="Add event performer"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventStart"
+            class="input" 
+            type="text" 
+            placeholder="Add event date"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventVenue"
+            class="input" 
+            type="text" 
+            placeholder="Add event venue"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventInfo"
+            class="input" 
+            type="text" 
+            placeholder="Add event info"
+            >
+        </p>
         <p class="control">
           <button
-          :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl"
+          :disabled="!newEventTitle + !newEventAge"
           class="button is-info"
           >
             Add
@@ -124,57 +116,13 @@
             class="column"
             :class ="{ 'has-text-success line-through' : todo.done }"
             >
-            <h5>
-              {{ todo.title }}
-            </h5>
+            {{ todo.title }}
           </div>
           <div
             class="column"
             :class ="{ 'has-text-success line-through' : todo.done }"
             >
             {{ todo.age }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.price }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.genre }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.performer }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.time }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.venue }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.info }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
-            >
-            {{ todo.url }}
           </div>
           <div class="has-text-right">
             <button
@@ -265,13 +213,6 @@ onMounted(() => {
         title: doc.data().title,
         done: doc.data().done,
         age: doc.data().age,
-        price: doc.data().price,
-        genre: doc.data().genre,
-        performer: doc.data().performer,
-        time: doc.data().time,
-        venue: doc.data().venue,
-        info: doc.data().info,
-        url: doc.data().url,
       }
       fbTodos.push(todo)
     })
@@ -283,38 +224,17 @@ onMounted(() => {
 
 const newEventTitle = ref('')
 const newEventAge = ref ('')
-const newEventPrice = ref ('')
-const newEventGenre = ref ('')
-const newEventPerformer = ref ('')
-const newEventTime = ref ('')
-const newEventVenue = ref ('')
-const newEventInfo = ref ('')
-const newEventUrl = ref ('')
 
 const addTodo = () => {
   addDoc(todosCollectionRef, {
     title: newEventTitle.value,
     done: false,
     date: Date.now(),
-    age: newEventAge.value,
-    price: newEventPrice.value,
-    genre: newEventGenre.value,
-    performer: newEventPerformer.value,
-    time: newEventTime.value,
-    venue: newEventVenue.value,
-    info: newEventInfo.value,
-    url: newEventUrl.value,
+    age: newEventAge.value
   })
 
   newEventTitle.value = ''
   newEventAge.value = ''
-  newEventPrice.value = ''
-  newEventGenre.value = ''
-  newEventPerformer.value = ''
-  newEventTime.value = ''
-  newEventVenue.value = ''
-  newEventInfo.value = ''
-  newEventUrl.value = ''
 }
 
 //delete todo
