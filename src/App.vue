@@ -49,7 +49,7 @@
             v-model="newEventPrice"
             class="input" 
             type="text" 
-            placeholder="Add event sale price"
+            placeholder="Add event price"
             >
         </p>
         <p class="control is-expanded mb-2">
