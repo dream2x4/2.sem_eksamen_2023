@@ -16,27 +16,85 @@
 
   <!-- Bulma -->
 
+
+  
   <div class="badass-todo">
 
     <div class="title has-text-centered">
-      Badass Todo
+      Add Event
     </div>
 
     <form
     @submit.prevent="addTodo"
     >
-      <div class="field is-grouped mb-5">
+      <div class="event-adder mb-5">
         <p class="control is-expanded">
           <input
-            v-model="newTodoContent"
+            v-model="newEventTitle"
             class="input" 
             type="text" 
-            placeholder="Add a todo"
+            placeholder="Add event title"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventAge"
+            class="input" 
+            type="text" 
+            placeholder="Add event age restriction"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventUrl"
+            class="input" 
+            type="text" 
+            placeholder="Add event sale url"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventTheme"
+            class="input" 
+            type="text" 
+            placeholder="Add event genre"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventPerformer"
+            class="input" 
+            type="text" 
+            placeholder="Add event performer"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventStart"
+            class="input" 
+            type="text" 
+            placeholder="Add event date"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventVenue"
+            class="input" 
+            type="text" 
+            placeholder="Add event venue"
+            >
+        </p>
+        <p class="control is-expanded">
+          <input
+            v-model="newEventInfo"
+            class="input" 
+            type="text" 
+            placeholder="Add event info"
             >
         </p>
         <p class="control">
           <button
-          :disabled="!newTodoContent"
+          :disabled="!newEventTitle + !newEventAge"
           class="button is-info"
           >
             Add
@@ -53,14 +111,20 @@
     <div class="card-content">
       <div class="content">
 
-        <div class="columns is-mobile is-vcentered">
+        <div class="">
           <div
             class="column"
             :class ="{ 'has-text-success line-through' : todo.done }"
             >
-            {{ todo.content }}
+            {{ todo.title }}
           </div>
-          <div class="column is-5 has-text-right">
+          <div
+            class="column"
+            :class ="{ 'has-text-success line-through' : todo.done }"
+            >
+            {{ todo.age }}
+          </div>
+          <div class="has-text-right">
             <button
             @click="toggleDone(todo.id)"
             class="button"
@@ -146,8 +210,9 @@ onMounted(() => {
     querySnapshot.forEach((doc) => {
       const todo = {
         id: doc.id,
-        content: doc.data().content,
-        done: doc.data().done
+        title: doc.data().title,
+        done: doc.data().done,
+        age: doc.data().age,
       }
       fbTodos.push(todo)
     })
@@ -157,16 +222,19 @@ onMounted(() => {
 
 //add todo
 
-const newTodoContent = ref('')
+const newEventTitle = ref('')
+const newEventAge = ref ('')
 
 const addTodo = () => {
   addDoc(todosCollectionRef, {
-    content: newTodoContent.value,
+    title: newEventTitle.value,
     done: false,
-    date: Date.now()
+    date: Date.now(),
+    age: newEventAge.value
   })
 
-  newTodoContent.value = ''
+  newEventTitle.value = ''
+  newEventAge.value = ''
 }
 
 //delete todo
@@ -255,7 +323,7 @@ nav a:first-of-type {
   @import 'bulma\css\bulma.min.css';
 
   .badass-todo {
-    max-width: 400px;
+    /*max-width: 400px;*/
     padding: 20px;
     margin: 0 auto;
   }
