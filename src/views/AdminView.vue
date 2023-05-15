@@ -1,24 +1,4 @@
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/admin">Admin</RouterLink>
-        <RouterLink to="/register">Register</RouterLink>
-        <RouterLink to="/sign-in">Login</RouterLink>
-        <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Bulma -->
-
-
-  
-  <div class="badass-todo">
+<template><div class="badass-todo">
 
     <div class="title has-text-centered">
       Add Event

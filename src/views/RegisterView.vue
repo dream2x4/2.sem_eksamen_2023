@@ -21,7 +21,7 @@ const register = () => {
     createUserWithEmailAndPassword(getAuth(), email.value, password.value)
         .then((data) => {
             console.log("Sucessfully registered!");
-            router.push('/feed') // redirect to the feed
+            router.push('/admin') // redirect to the feed
         })
         .catch((error) => {
             console.log(error.code);
