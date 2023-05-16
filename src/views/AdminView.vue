@@ -5,7 +5,7 @@
     </div>
 
     <form
-    @submit.prevent="addTodo"
+    @submit.prevent="addPost"
     >
       <div class="event-adder mb-5">
         <p class="control is-expanded mb-2">
@@ -80,6 +80,9 @@
             placeholder="Add event sale url"
             >
         </p>
+        <!-- Image upload-->
+        <input class="mb-2" type="file" label="File input" @change="uploadImg">
+        <!-- Control -->
         <p class="control">
           <button
           :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl"
@@ -93,9 +96,9 @@
     
     <!-- Card -->
     <div 
-    v-for="todo in todos"
+    v-for="post in posts"
     class="card mb-5"
-    :class="{ 'has-background-success-light' : todo.done}"
+    :class="{ 'has-background-success-light' : post.done}"
     >
     <div class="card-content">
       <div class="content">
@@ -103,70 +106,75 @@
         <div class="">
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
             <h5 class="mb-0">
-              {{ todo.title }}
+              {{ post.title }}
             </h5>
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.age }}
+            {{ post.age }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.price }}
+            {{ post.price }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.genre }}
+            {{ post.genre }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.performer }}
+            {{ post.performer }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.time }}
+            {{ post.time }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.venue }}
+            {{ post.venue }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.info }}
+            {{ post.info }}
           </div>
           <div
             class="column"
-            :class ="{ 'has-text-success line-through' : todo.done }"
+            :class ="{ 'has-text-success line-through' : post.done }"
             >
-            {{ todo.url }}
+            {{ post.url }}
           </div>
+          <!-- Image -->
+          <div>
+            <img :src="post.imgURL" alt="post image" width="200" height="200">
+          </div>
+          <!-- Check & delete btn -->
           <div class="has-text-right">
             <button
-            @click="toggleDone(todo.id)"
+            @click="toggleDone(post.id)"
             class="button"
-            :class="todo.done ? 'is-success' : 'is-light'"
+            :class="post.done ? 'is-success' : 'is-light'"
             >
               &check;
             </button>
             <button
-              @click="deleteTodo(todo.id)"
+              @click="deletePost(post.id)"
               class="button is-danger ml-2"
             >
               &cross;
@@ -194,12 +202,12 @@ import { db } from '@/firebase';
 
 //Firebase refs
 
-const todosCollectionRef = collection(db, 'todos')
-const todosCollectionQuery = query(todosCollectionRef, orderBy('date', 'desc'), limit(5))
+const postsCollectionRef = collection(db, 'posts')
+const postsCollectionQuery = query(postsCollectionRef, orderBy('date', 'desc'), limit(5))
 
-//Todos
+//Posts
 
-const todos = ref([
+const posts = ref([
   /*{
     id: 'id1',
     content: 'Shave my butt',
@@ -212,12 +220,12 @@ const todos = ref([
   }*/
 ])
 
-//get todos
+//get posts
 onMounted(() => {
-  onSnapshot(todosCollectionQuery, (querySnapshot) => {
-    const fbTodos = []
+  onSnapshot(postsCollectionQuery, (querySnapshot) => {
+    const fbPosts = []
     querySnapshot.forEach((doc) => {
-      const todo = {
+      const post = {
         id: doc.id,
         title: doc.data().title,
         done: doc.data().done,
@@ -230,13 +238,13 @@ onMounted(() => {
         info: doc.data().info,
         url: doc.data().url,
       }
-      fbTodos.push(todo)
+      fbPosts.push(post)
     })
-    todos.value = fbTodos
+    posts.value = fbPosts
   })
 })
 
-//add todo
+//add post
 
 const newEventTitle = ref('')
 const newEventAge = ref ('')
@@ -248,8 +256,8 @@ const newEventVenue = ref ('')
 const newEventInfo = ref ('')
 const newEventUrl = ref ('')
 
-const addTodo = () => {
-  addDoc(todosCollectionRef, {
+const addPost = () => {
+  addDoc(postsCollectionRef, {
     title: newEventTitle.value,
     done: false,
     date: Date.now(),
@@ -274,19 +282,19 @@ const addTodo = () => {
   newEventUrl.value = ''
 }
 
-//delete todo
+//delete post
 
-const deleteTodo = id => {
-  deleteDoc(doc(todosCollectionRef, id))
+const deletePost = id => {
+  deleteDoc(doc(postsCollectionRef, id))
 }
 
 //toggle done
 
 const toggleDone = id => {
-  const index = todos.value.findIndex(todo => todo.id === id)
+  const index = posts.value.findIndex(post => post.id === id)
 
-  updateDoc(doc(todosCollectionRef, id), {
-    done: !todos.value[index].done
+  updateDoc(doc(postsCollectionRef, id), {
+    done: !posts.value[index].done
   })
 }
 
