@@ -82,6 +82,7 @@
         </p>
         <!-- Image upload-->
         <input class="mb-2" type="file" label="File input" @change="uploadImg">
+     <!--    <button @click.prevent="firebaseAddSingleItem()" :disabled="addItemData.uploadBtnDisabled">Add item</button> -->
         <!-- Control -->
         <p class="control">
           <button
@@ -191,7 +192,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref as refVue, reactive } from "vue"; //reactive from image upload
 
 import { 
   collection, onSnapshot, 
@@ -200,6 +201,9 @@ import {
 } from 'firebase/firestore';
 import { db } from '@/firebase';
 
+//image
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
 //Firebase refs
 
 const postsCollectionRef = collection(db, 'posts')
@@ -207,8 +211,9 @@ const postsCollectionQuery = query(postsCollectionRef, orderBy('date', 'desc'), 
 
 //Posts
 
-const posts = ref([
-  /*{
+let posts = refVue('')
+/*const posts = ref([
+  {
     id: 'id1',
     content: 'Shave my butt',
     done: false
@@ -217,8 +222,8 @@ const posts = ref([
   id: 'id2',
     content: 'Wash my butt',
     done: true
-  }*/
-])
+  }
+])*/
 
 //get posts
 onMounted(() => {
@@ -237,6 +242,7 @@ onMounted(() => {
         venue: doc.data().venue,
         info: doc.data().info,
         url: doc.data().url,
+        imgURL:doc.data().imgURL
       }
       fbPosts.push(post)
     })
@@ -246,15 +252,15 @@ onMounted(() => {
 
 //add post
 
-const newEventTitle = ref('')
-const newEventAge = ref ('')
-const newEventPrice = ref ('')
-const newEventGenre = ref ('')
-const newEventPerformer = ref ('')
-const newEventTime = ref ('')
-const newEventVenue = ref ('')
-const newEventInfo = ref ('')
-const newEventUrl = ref ('')
+const newEventTitle = refVue ('')
+const newEventAge = refVue ('')
+const newEventPrice = refVue ('')
+const newEventGenre = refVue ('')
+const newEventPerformer = refVue ('')
+const newEventTime = refVue ('')
+const newEventVenue = refVue ('')
+const newEventInfo = refVue ('')
+const newEventUrl = refVue ('')
 
 const addPost = () => {
   addDoc(postsCollectionRef, {
@@ -269,6 +275,8 @@ const addPost = () => {
     venue: newEventVenue.value,
     info: newEventInfo.value,
     url: newEventUrl.value,
+    imgURL: addItemData.imgURL
+    
   })
 
   newEventTitle.value = ''
@@ -296,6 +304,93 @@ const toggleDone = id => {
   updateDoc(doc(postsCollectionRef, id), {
     done: !posts.value[index].done
   })
+}
+
+//Image script
+/* const { 
+  posts,
+  getPostsData, 
+} = usePosts()
+ 
+onMounted(() => {
+  getPostsData()
+}) */
+
+// Add item data: title, description, image URL and have the button disabled until image is uploaded
+let addItemData = reactive({
+  imgURL: '',
+  uploadBtnDisabled: true
+})
+
+ // Add dynamic data to Firebase Firestore
+ const firebaseAddSingleItem = async() => {
+    await addDoc(collection(db, "posts"), {
+      imgURL: addItemData.imgURL
+    }
+    ).then(() => {
+      //  snackbar.value = true
+    })
+  }
+
+const storage = getStorage();
+ 
+// Firebase storage upload image + get download URL + enable button after image uploaded
+const uploadImg = async(event) => {
+  let file = event.target.files[0]; // get the file
+  console.log("file", file)
+// Create the file metadata
+/** @type {any} */
+const metadata = {
+  contentType: 'image/jpeg'
+};
+
+// Upload file and metadata to the object 'images/mountains.jpg'
+const storageRef = ref(storage, 'images/' + file.name);
+const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on('state_changed',
+  (snapshot) => {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');       
+        break;
+    }
+  }, 
+  (error) => {
+    // A full list of error codes is available at
+    // https://firebase.google.com/docs/storage/web/handle-errors
+    switch (error.code) {
+      case 'storage/unauthorized':
+        // User doesn't have permission to access the object
+        break;
+      case 'storage/canceled':
+        // User canceled the upload
+        break;
+
+      // ...
+
+      case 'storage/unknown':
+        // Unknown error occurred, inspect error.serverResponse
+        break;
+    }
+  }, 
+  () => {
+    // Upload completed successfully, now we can get the download URL
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      console.log('File available at', downloadURL);
+
+      addItemData.imgURL = downloadURL // update variable imgURL and put the image URL link in it. 
+      addItemData.uploadBtnDisabled = false // enable button after image uploaded is complete
+    });
+  }  
+);
 }
 
 </script>

@@ -31,3 +31,7 @@ a,
     padding: 0 2rem;
   }
 }
+
+html, body {
+  background-color: #212121;
+}
