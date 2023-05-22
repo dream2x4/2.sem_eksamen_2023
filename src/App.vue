@@ -1,16 +1,16 @@
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/img/kanten_logo.png" width="90" height="90" />
+    <img alt="Vue logo" class="logo" src="@/assets/img/kanten_logo.png" width="104.83" height="90" />
 
-    <div class="wrapper col-12">
+    <div class="wrapper ">
 
       <nav>
         <div class="nav-container">
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/events">Events</RouterLink>
-          <RouterLink to="/admin">Admin</RouterLink>
-          <RouterLink to="/register">Register</RouterLink>
-          <RouterLink to="/sign-in">Login</RouterLink>
+          <RouterLink to="/">HJEM</RouterLink>
+          <RouterLink to="/events">EVENTS</RouterLink>
+          <RouterLink to="/admin">ADMIN</RouterLink>
+          <RouterLink to="/register">REGISTER</RouterLink>
+          <RouterLink to="/sign-in">LOGIN</RouterLink>
           <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
         </div>
       </nav>
@@ -106,6 +106,11 @@ onMounted(() => {
 header {
   line-height: 1.5;
   max-height: 100vh;
+  justify-content: space-between;
+  padding: 0;
+
+  position: absolute;
+  z-index: 1;
 }
 
 .logo {
@@ -114,24 +119,22 @@ header {
 }
 
 nav {
-  width: 100%;
+  width: auto;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+
+  font-family: "brother-1816", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -144,7 +147,6 @@ nav a:first-of-type {
     font-size: 16px;
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   .logo {
@@ -163,8 +165,6 @@ nav a:first-of-type {
     display: flex;
     justify-content: flex-end;
     font-size: 1rem;
-
-    margin-top: 1rem;
   }
 
   nav a {
