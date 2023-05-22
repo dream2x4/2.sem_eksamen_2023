@@ -1,16 +1,18 @@
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/img/kanten_logo.png" width="90" height="90" />
 
-    <div class="wrapper">
+    <div class="wrapper col-12">
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/events">Events</RouterLink>
-        <RouterLink to="/admin">Admin</RouterLink>
-        <RouterLink to="/register">Register</RouterLink>
-        <RouterLink to="/sign-in">Login</RouterLink>
-        <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+        <div class="nav-container">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/events">Events</RouterLink>
+          <RouterLink to="/admin">Admin</RouterLink>
+          <RouterLink to="/register">Register</RouterLink>
+          <RouterLink to="/sign-in">Login</RouterLink>
+          <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -138,6 +140,8 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
+    width: 100%;
+    font-size: 16px;
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
@@ -154,13 +158,26 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
     font-size: 1rem;
 
-    padding: 1rem 0;
     margin-top: 1rem;
   }
+
+  nav a {
+    display: inline-block;
+    padding: 0 2rem;
+  }
+
+  nav a.router-link-exact-active {
+  color: var(--vt-c-grey);
+  background-color: var(--vt-c-white-soft);
+}
+
+
 }
 </style>
 
