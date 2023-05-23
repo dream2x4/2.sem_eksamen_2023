@@ -7,7 +7,10 @@
       <nav>
         <div class="nav-container">
           <RouterLink to="/">HJEM</RouterLink>
+          <RouterLink to="/about">OM OS</RouterLink>
           <RouterLink to="/events">EVENTS</RouterLink>
+          <RouterLink to="/volunteer">FRIVILLIG</RouterLink>
+          <RouterLink to="/membership">MEDLEMSKAB</RouterLink>
           <RouterLink to="/admin">ADMIN</RouterLink>
           <RouterLink to="/register">REGISTER</RouterLink>
           <RouterLink to="/sign-in">LOGIN</RouterLink>

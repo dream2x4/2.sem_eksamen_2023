@@ -5,7 +5,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: () => import("../views/HomeView.vue")},
+    { path: "/about", component: () => import("../views/AboutView.vue")},
     { path: "/events", component: () => import("../views/EventsView.vue")},
+    { path: "/volunteer", component: () => import("../views/VolunteerView.vue")},
+    { path: "/membership", component: () => import("../views/MembershipView.vue")},
     { path: "/register", component: () => import("../views/RegisterView.vue")},
     { path: "/sign-in", component: () => import("../views/SignInView.vue")},
     { 
