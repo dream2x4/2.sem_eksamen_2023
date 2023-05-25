@@ -21,7 +21,7 @@ const register = () => {
     signInWithEmailAndPassword(auth, email.value, password.value)
         .then((data) => {
             console.log("Sucessfully signed in!");
-            router.push('/admin') // redirect to the feed
+            router.push('/admin') // redirect to the admin
         })
         .catch((error) => {
             console.log(error.code);

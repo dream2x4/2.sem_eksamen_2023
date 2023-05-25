@@ -1,7 +1,13 @@
-<template><div class="badass-todo">
+<template>
+<!-- Hero -->
+  <div class="hero d-flex justify-content-center align-items-center">
+  </div>
+
+
+  <div class="badass-todo">
 
     <div class="title has-text-centered">
-      Add Event
+      <h1>Add Event</h1>
     </div>
 
     <form
@@ -86,7 +92,7 @@
         <!-- Control -->
         <p class="control">
           <button
-          :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl"
+          :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl + addItemData.uploadBtnDisabled"
           class="button is-info"
           >
             Add
@@ -192,7 +198,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref as refVue, reactive } from "vue"; //reactive from image upload
+import { onMounted, ref as refVue, reactive } from "vue";
 
 import { 
   collection, onSnapshot, 
@@ -307,14 +313,6 @@ const toggleDone = id => {
 }
 
 //Image script
-/* const { 
-  posts,
-  getPostsData, 
-} = usePosts()
- 
-onMounted(() => {
-  getPostsData()
-}) */
 
 // Add item data: title, description, image URL and have the button disabled until image is uploaded
 let addItemData = reactive({
@@ -400,7 +398,16 @@ uploadTask.on('state_changed',
 </style>
 
 <style>
-  @import 'bulma\css\bulma.min.css';
+
+  .hero {
+    height: 50vh;
+    background-color: aqua;
+  
+    background-image: url(../assets/img/hero_img.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 
   .badass-todo {
     /*max-width: 400px;*/

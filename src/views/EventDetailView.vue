@@ -1,14 +1,12 @@
 <template>
-  <!-- Hero -->
-  <div class="hero d-flex justify-content-center align-items-center">
-    <div class="hero-text-box col-10 d-flex flex-column align-items-end">
-      <h1>KANTEN</h1>
-      <p class="p-hero">ESBJERGS NYE KULTURFÆLLESKAB</p>
-    </div>
-  </div>
+    <div class="displayStuff" style="color: pink">
+      {{ data }}
+      <div v-for="it in data">
+        {{ it }}
 
-  <div class="badass-todo">
-    <div @click="redirect(post.id)" style="cursor: pointer"
+      </div>
+    </div>
+    <div
     v-for="post in posts"
     class="card mb-5"
     :class="{ 'has-background-success-light' : post.done}"
@@ -83,14 +81,18 @@
       </div>
     </div>
   </div>
-
-  </div>
-
+    <button class="button" @click="goBack()">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="15.rem" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>  -->
+          Go back
+        </button>
 </template>
+
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router';
 
 import { 
   collection, onSnapshot, 
@@ -99,15 +101,23 @@ import {
 } from 'firebase/firestore';
 import { db } from '@/firebase';
 
+
 //Firebase refs
 
 const postsCollectionRef = collection(db, 'posts')
 const postsCollectionQuery = query(postsCollectionRef, orderBy('date', 'desc'), limit(5))
 
 const router = useRouter()
+const route = useRoute()
+
+const id = route.params.id
 
 const redirect = (id) => {
   router.push("/eventdetail/" + id)
+}
+
+const goBack = () => {
+    router.push("/events")
 }
 
 //Posts
@@ -130,21 +140,23 @@ onMounted(() => {
   onSnapshot(postsCollectionQuery, (querySnapshot) => {
     const fbPosts = []
     querySnapshot.forEach((doc) => {
-      const post = {
-        id: doc.id,
-        title: doc.data().title,
-        done: doc.data().done,
-        age: doc.data().age,
-        price: doc.data().price,
-        genre: doc.data().genre,
-        performer: doc.data().performer,
-        time: doc.data().time,
-        venue: doc.data().venue,
-        info: doc.data().info,
-        url: doc.data().url,
-        imgURL:doc.data().imgURL
-      }
-      fbPosts.push(post)
+        if(doc.id == id){
+            const post = {
+                id: doc.id,
+                title: doc.data().title,
+                done: doc.data().done,
+                age: doc.data().age,
+                price: doc.data().price,
+                genre: doc.data().genre,
+                performer: doc.data().performer,
+                time: doc.data().time,
+                venue: doc.data().venue,
+                info: doc.data().info,
+                url: doc.data().url,
+                imgURL:doc.data().imgURL
+            }
+            fbPosts.push(post)
+        }
     })
     posts.value = fbPosts
   })
@@ -152,18 +164,3 @@ onMounted(() => {
 
 </script>
 
-<style scoped>
-.hero {
-    height: 100vh;
-    background-color: aqua;
-
-    background-image: url(../assets/img/hero_img.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-btn:first-of-type {
-    margin-right: 2rem;
-  }
-</style>

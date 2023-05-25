@@ -7,6 +7,7 @@ const router = createRouter({
     { path: "/", component: () => import("../views/HomeView.vue")},
     { path: "/about", component: () => import("../views/AboutView.vue")},
     { path: "/events", component: () => import("../views/EventsView.vue")},
+    { path: "/eventdetail/:id", component: () => import("../views/EventDetailView.vue")},
     { path: "/volunteer", component: () => import("../views/VolunteerView.vue")},
     { path: "/membership", component: () => import("../views/MembershipView.vue")},
     { path: "/register", component: () => import("../views/RegisterView.vue")},
