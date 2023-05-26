@@ -1,92 +1,97 @@
 <template>
-    <div class="displayStuff" style="color: pink">
-      {{ data }}
-      <div v-for="it in data">
-        {{ it }}
-
-      </div>
+    <div class="hero d-flex justify-content-center align-items-center">
     </div>
-    <div
-    v-for="post in posts"
-    class="card mb-5"
-    :class="{ 'has-background-success-light' : post.done}"
-    >
-    <div class="card-content">
-      <div class="content">
 
-        <div class="">
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
+    <div class="card-box d-flex flex-column justify-content-center align-items-center">
+        <div class="col-10">
+            <div
+            v-for="post in posts"
+            class="event-card"
+            :class="{ 'has-background-success-light' : post.done}"
             >
-            <h5 class="mb-0">
-              {{ post.title }}
-            </h5>
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.age }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.price }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.genre }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.performer }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.time }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.venue }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.info }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.url }}
-          </div>
-          <!-- Image -->
-          <div>
-            <img :src="post.imgURL" alt="post image" width="200" height="200">
-          </div>
-          <div class="has-text-right">
-          </div>
+            <div class="card-content">
+            <div class="content">
+
+                <div class="">
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    <h5 class="mb-0">
+                    {{ post.title }}
+                    </h5>
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.age }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.price }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.genre }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.performer }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.time }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.venue }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.info }}
+                </div>
+                <div
+                    class="column"
+                    :class ="{ 'has-text-success line-through' : post.done }"
+                    >
+                    {{ post.url }}
+                </div>
+                <!-- Image -->
+                <div>
+                    <img :src="post.imgURL" alt="post image" width="200" height="200">
+                </div>
+                <div class="has-text-right">
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
+
+        </div>
+
+        <div class="col-10">
+            <button class="button" @click="goBack()">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="15.rem" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>  -->
+                Go back
+            </button>
+        </div>
+
     </div>
-  </div>
-    <button class="button" @click="goBack()">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="15.rem" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-          </svg>  -->
-          Go back
-        </button>
 </template>
 
 
@@ -163,4 +168,25 @@ onMounted(() => {
 })
 
 </script>
+
+<style scoped>
+.hero {
+    height: 50vh;
+    background-color: aqua;
+  
+    background-image: url(../assets/img/hero_img.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.card-box {
+    height: auto;
+    padding: 8rem 0;
+}
+
+.event-card {
+    margin-bottom: 6rem;
+}
+</style>
 

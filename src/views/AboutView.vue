@@ -5,21 +5,15 @@
   
     <!-- Box -->
   
-    <div class="box d-flex justify-content-center align-items-center">
-        <article class="about d-flex justify-content-center align-items-center">
+    <div class="box d-flex justify-content-center">
+        <article class="about d-flex justify-content-center">
             <div class="col-6">
                 <div class="about-content">
                     <!-- single item -->
                     <div class="content active" id="history">
                     <h2 class="h2-box">OM OS</h2>
                     <p>
-                        I'm baby wolf pickled schlitz try-hard normcore marfa man bun
-                        mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
-                        rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
-                        tilde try-hard, woke fixie banjo man bun. Small batch tumeric
-                        mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
-                        direct trade hoodie ugh chambray, craft beer pork belly flannel
-                        tacos single-origin coffee art party migas plaid pop-up.
+                        Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.
                     </p>
                     </div>
                     <!-- end of single item -->
@@ -37,11 +31,6 @@
                         rights skateboard affogato readymade sustainable deep v
                         live-edge schlitz narwhal.
                     </p>
-                    <ul>
-                        <li>list item</li>
-                        <li>list item</li>
-                        <li>list item</li>
-                    </ul>
                     </div>
                     <!-- end of single item -->
                     <!-- single item -->
@@ -63,10 +52,18 @@
                 </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-3">
-                <button class="tab-btn active" data-id="history">OM OS</button>
-                <button class="tab-btn" data-id="vision">BLIV DJ</button>
-                <button class="tab-btn" data-id="goals">HVOR ER VI?</button>
+            <div class="col-3 d-flex align-items-center">
+                <div class="div">
+                    <button class="tab-btn active d-flex align-items-center" data-id="history">
+                        ◀ OM OS
+                    </button>
+                    <button class="tab-btn" data-id="vision">
+                        ◀ BLIV DJ
+                    </button>
+                    <button class="tab-btn" data-id="goals">
+                        ◀   HVOR ER VI?
+                    </button>
+                </div>
             </div>
         </article>
 
@@ -83,7 +80,7 @@
                 <h2 class="h2-box">KRÆFTVÆRKET</h2>
                 <p class="p-box">Esbjerg har i flere år manglet gængse øvelokaler med mulighed for indspilning, og her vil Kanten give muligheden for at benytte sig af et lydstudie samt et øvelokale af høj kvalitet. I kraft af Kantens vision om at hjælpe det musikalske vækstlag med at skabe musik, så vil der tilbydes en lydtekniker som ifølge aftale kan undervise i lydstudieteknik - alt efter behov. Med Kraftværkets placering i Østerbyen vil vi løfte interessen for musik, særligt for de lokale unge. Det vil vi f.eks. gøre med undervisning i øjenhøjde og med kendskab til unge i området. Kraftværket kan benyttes af alle der spiller, eller gerne vil spille musik.</p>
 
-                <h2 class="h2-box">PRISER PÅ MEDLEMSKAB</h2>
+                <p class="p-bold">PRISER PÅ MEDLEMSKAB:</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="p-box">Adgang til øvelokalet  i 3 md.</p>
                     <p class="p-box">300 kr.</p>
@@ -97,7 +94,7 @@
                     <p class="p-box">100 kr.</p>
                 </div>
 
-                <h2 class="h2-box">KONTAKT KANTEN</h2>
+                <p class="p-bold">KONTAKT KANTEN:</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="p-box">Telefon:</p>
                     <p class="p-box">28 97 11 85</p>
@@ -113,7 +110,14 @@
             </div>
             <div class="col-4"></div>
         </div>
+    </div>
 
+    <div class="box d-flex justify-content-center align-items-center">
+        <div class="box-text col-10">
+        <h2 class="h2-box">HVOR ER VI?</h2>
+        <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        <button>BLIV MEDLEM</button>
+        </div>
     </div>
   
   </template>
@@ -124,13 +128,14 @@
 onMounted(() => {
     const isActive = ref(true)
     
-    //Test
+    //Tags
     
     //const about = document.querySelector('.about');
     const btns = document.querySelectorAll('.tab-btn');
     const articles = document.querySelectorAll('.content');
     
     let selected = 0;
+    let btn = 0;
 
     for(let i = 0; i < btns.length; i++){
         btns[i].addEventListener("click", () => {
@@ -142,6 +147,10 @@ onMounted(() => {
         articles[selected].classList.remove("active")
         articles[newSelected].classList.add("active")
         selected = newSelected
+
+        btns[btn].classList.remove("active")
+        btns[newSelected].classList.add("active")
+        btn = newSelected
     }
 
     /* about.addEventListener("click", function (e) {
@@ -180,7 +189,7 @@ onMounted(() => {
     }
 
     .box {
-        height: 70vh;
+        height: 80vh;
     }
     
     .card-box {
@@ -188,19 +197,7 @@ onMounted(() => {
         padding: 8rem 0;
     }
 
-    /* test */
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
-img:not(.logo) {
-  width: 100%;
-}
-img {
-  display: block;
-}
+/* test */
 
 /*  global classes */
 
@@ -218,14 +215,7 @@ About
 */
 
 .about {
-  background: var(--clr-white);
-  border-radius: var(--radius);
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-.btn-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+    padding: 8rem 0;
 }
 .tab-btn:nth-child(1) {
   border-top-left-radius: var(--radius);
@@ -234,28 +224,31 @@ About
   border-top-right-radius: var(--radius);
 }
 .tab-btn {
-  padding: 1rem 0;
+  padding: 0.6rem 1.6rem;
+  margin: 0.6rem 0 0.6rem 0.6rem;
   border: none;
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: 1.4rem;
   display: block;
   cursor: pointer;
 }
 .tab-btn:hover:not(.active) {
-  background: var(--clr-primary-10);
-  color: var(--clr-primary-5);
+  background: var(--vt-c-white-soft);
+  color: var(--vt-c-grey);
+  margin-left: 0;
 }
 .about-content {
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  padding: 2rem 0 2rem 1.5rem;
 }
 /* hide content */
 .content {
   display: none;
 }
 .tab-btn.active {
-  background: var(--vt-c-white-soft);
+  background: var(--vt-c-white-mute);
+  color: var(--vt-c-purple);
+  margin-left: 0;
 }
 .content.active {
   display: block;
