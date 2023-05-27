@@ -57,13 +57,19 @@ h3 {
 
 p {
   font-size: 1.2rem;
-  color: var(--vt-c-white-soft);
+  color: var(--vt-c-grey-light);
 }
 
 .p-bold {
   font-weight: 700;
+  color: var(--vt-c-white-soft);
+}
+
+.p-underline {
+  font-weight: 700;
   text-decoration: underline;
   margin-bottom: 1.6rem;
+  color: var(--vt-c-white-soft);
 }
 
 .p-hero {
@@ -73,6 +79,17 @@ p {
 
   font-size: 2.5rem;
   color: var(--vt-c-white-soft);
+}
+
+.p-date {
+  color: var(--vt-c-orange);
+
+  margin-bottom: 0;
+}
+
+.post-img{
+  width: 100%;
+  height: auto;
 }
 
 /*btn*/
@@ -130,4 +147,21 @@ html, body {
 .card-box {
   box-shadow: 0 0 2rem #0e0e0e;
   height: 100vh;
+}
+
+input {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: transparent;
+  width: 100%;
+
+  color: var(--vt-c-grey-light);
+}
+
+input:focus, .input:focus {
+  outline: none;
+
+  color: var(--vt-c-white-soft);
 }

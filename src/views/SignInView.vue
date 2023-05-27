@@ -1,9 +1,13 @@
 <template>
-    <h1>Sign In to an Account</h1>
-    <p><input type="text" placeholder="Email" v-model="email"/></p>
-    <p><input type="password" placeholder="Password" v-model="password"/></p>
-    <p v-if="errMsg">{{  errMsg }}</p>
-    <p><button @click="register">Submit</button></p>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-3 flex-column d-flex justify-content-center">
+            <h2>ADMIN</h2>
+            <p><input type="text" placeholder="Email" v-model="email"/></p>
+            <p style="margin-bottom: 2rem;"><input type="password" placeholder="Password" v-model="password"/></p>
+            <p v-if="errMsg">{{  errMsg }}</p>
+            <p><button @click="register">LOG IND</button></p>
+        </div>
+    </div>
 </template>
 
 <script setup>

@@ -10,7 +10,7 @@ const router = createRouter({
     { path: "/eventdetail/:id", component: () => import("../views/EventDetailView.vue")},
     { path: "/volunteer", component: () => import("../views/VolunteerView.vue")},
     { path: "/membership", component: () => import("../views/MembershipView.vue")},
-    { path: "/register", component: () => import("../views/RegisterView.vue")},
+    /*{ path: "/register", component: () => import("../views/RegisterView.vue")},*/
     { path: "/sign-in", component: () => import("../views/SignInView.vue")},
     { 
       path: "/admin",

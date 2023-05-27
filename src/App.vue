@@ -1,6 +1,8 @@
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/img/kanten_logo.png" width="104.83" height="90" />
+    <RouterLink class="logo" to="/">
+      <img alt="" src="@/assets/img/kanten_logo.png" width="104.83" height="90" />
+    </RouterLink>
 
     <div class="wrapper ">
 
@@ -11,10 +13,10 @@
           <RouterLink to="/events">EVENTS</RouterLink>
           <RouterLink to="/volunteer">FRIVILLIG</RouterLink>
           <RouterLink to="/membership">MEDLEMSKAB</RouterLink>
-          <RouterLink to="/admin">ADMIN</RouterLink>
-          <RouterLink to="/register">REGISTER</RouterLink>
-          <RouterLink to="/sign-in">LOGIN</RouterLink>
-          <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+          <!--<RouterLink to="/admin">ADMIN</RouterLink>-->
+          <!--<RouterLink to="/register">REGISTER</RouterLink>-->
+          <!--<RouterLink to="/sign-in">LOGIN</RouterLink>-->
+          <button class="log-out-btn" @click="handleSignOut" v-if="isLoggedIn">LOG UD</button>
         </div>
       </nav>
     </div>
@@ -186,7 +188,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 1rem 2rem 0 2rem;
   }
 
   header .wrapper {
@@ -214,6 +216,21 @@ nav a:first-of-type {
 }
 
 
+}
+
+.log-out-btn {
+  width: auto;
+  font-size: 1.4rem;
+  text-align: center;
+
+  display: inline-block;
+  padding: 0 2rem;
+  background-color: transparent;
+  color: var(--vt-c-white-soft);
+}
+
+.log-out-btn:hover{
+  color: var(--vt-c-purple);
 }
 
 .footer {

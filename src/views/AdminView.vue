@@ -4,197 +4,213 @@
   </div>
 
 
-  <div class="badass-todo">
+  <div class="box d-flex flex-column justify-content-center align-items-center">
+    <div class="col-6">
 
-    <div class="title has-text-centered">
-      <h1>Add Event</h1>
-    </div>
-
-    <form
-    @submit.prevent="addPost"
-    >
-      <div class="event-adder mb-5">
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventTitle"
-            class="input" 
-            type="text" 
-            placeholder="Add event title"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventAge"
-            class="input" 
-            type="text" 
-            placeholder="Add event age restriction"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventPrice"
-            class="input" 
-            type="text" 
-            placeholder="Add event price"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventGenre"
-            class="input" 
-            type="text" 
-            placeholder="Add event genre"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventPerformer"
-            class="input" 
-            type="text" 
-            placeholder="Add event performer"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventTime"
-            class="input" 
-            type="text"
-            placeholder="Add event date"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventVenue"
-            class="input" 
-            type="text" 
-            placeholder="Add event venue"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventInfo"
-            class="input" 
-            type="text" 
-            placeholder="Add event info"
-            >
-        </p>
-        <p class="control is-expanded mb-2">
-          <input
-            v-model="newEventUrl"
-            class="input" 
-            type="text" 
-            placeholder="Add event sale url"
-            >
-        </p>
-        <!-- Image upload-->
-        <input class="mb-2" type="file" label="File input" @change="uploadImg">
-     <!--    <button @click.prevent="firebaseAddSingleItem()" :disabled="addItemData.uploadBtnDisabled">Add item</button> -->
-        <!-- Control -->
-        <p class="control">
-          <button
-          :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl + addItemData.uploadBtnDisabled"
-          class="button is-info"
-          >
-            Add
-          </button>
-        </p>
+      <div>
       </div>
-    </form>
-    
-    <!-- Card -->
-    <div 
-    v-for="post in posts"
-    class="card mb-5"
-    :class="{ 'has-background-success-light' : post.done}"
-    >
-    <div class="card-content">
-      <div class="content">
 
-        <div class="">
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            <h5 class="mb-0">
-              {{ post.title }}
-            </h5>
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.age }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.price }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.genre }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.performer }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.time }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.venue }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.info }}
-          </div>
-          <div
-            class="column"
-            :class ="{ 'has-text-success line-through' : post.done }"
-            >
-            {{ post.url }}
-          </div>
-          <!-- Image -->
-          <div>
-            <img :src="post.imgURL" alt="post image" width="200" height="200">
-          </div>
-          <!-- Check & delete btn -->
-          <div class="has-text-right">
+      <div class="title has-text-centered">
+        <h2>TILFØJ EVENT</h2>
+      </div>
+
+      <form
+      @submit.prevent="addPost"
+      >
+        <div class="event-adder mb-5">
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventTitle"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj event titel"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventAge"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj aldersbegrænsning"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventPrice"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj pris"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventGenre"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj kategori"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventPerformer"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj kunstner(e)"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventTime"
+              class="input" 
+              type="text"
+              placeholder="Tilføj dato & tid"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventVenue"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj sted & adresse"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventInfo"
+              class="input" 
+              type="text"
+              placeholder="Tilføj beskrivelse"
+              >
+          </p>
+          <p class="control is-expanded mb-2">
+            <input
+              v-model="newEventUrl"
+              class="input" 
+              type="text" 
+              placeholder="Tilføj salg url"
+              >
+          </p>
+          <!-- Image upload-->
+          <input class="mb-2" type="file" label="File input" @change="uploadImg">
+      <!--    <button @click.prevent="firebaseAddSingleItem()" :disabled="addItemData.uploadBtnDisabled">Add item</button> -->
+          <!-- Control -->
+          <p class="control">
             <button
-            @click="toggleDone(post.id)"
-            class="button"
-            :class="post.done ? 'is-success' : 'is-light'"
+            :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl + addItemData.uploadBtnDisabled"
+            class="button is-info"
             >
-              &check;
+              TILFØJ
             </button>
-            <button
-              @click="deletePost(post.id)"
-              class="button is-danger ml-2"
-            >
-              &cross;
-            </button>
+          </p>
+        </div>
+      </form>
+      
+    </div>
+    <div class="col-10">
+    <div class="">
+      <!-- Card -->
+      <div 
+          v-for="post in posts"
+          class="card mb-5"
+          :class="{ 'has-background-success-light' : post.done}"
+          >
+          <div class="card-content">
+            <div class="content">
+
+              <div class="">
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  <h5 class="mb-0">
+                    EVENT TITEL -  
+                    {{ post.title }}
+                  </h5>
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  ALDERSBEGRÆNSNING - 
+                  {{ post.age }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  PRIS - 
+                  {{ post.price }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  KATEGORI - 
+                  {{ post.genre }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  KUNSTNER - 
+                  {{ post.performer }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  DATO & TID - 
+                  {{ post.time }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  STED & ADRESSE - 
+                  {{ post.venue }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  BESKRIVELSE - 
+                  {{ post.info }}
+                </div>
+                <div
+                  class="column mb-2"
+                  :class ="{ 'has-text-success line-through' : post.done }"
+                  >
+                  SALG URL - 
+                  {{ post.url }}
+                </div>
+                <!-- Image -->
+                <div>
+                  <img :src="post.imgURL" class="mb-2" alt="post image" style="height: 200px;">
+                </div>
+                <!-- Check & delete btn -->
+                <div class="d-flex justify-content-end">
+                  <button
+                  @click="toggleDone(post.id)"
+                  class="button"
+                  :class="post.done ? 'is-success' : 'is-light'"
+                  >
+                    &check;
+                  </button>
+                  <button
+                    @click="deletePost(post.id)"
+                    class="button is-danger ml-2"
+                  >
+                    &cross;
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
   </div>
-
-  </div>
-
-  <RouterView />
+  
 </template>
 
 <script setup>
@@ -409,10 +425,16 @@ uploadTask.on('state_changed',
     background-repeat: no-repeat;
   }
 
-  .badass-todo {
-    /*max-width: 400px;*/
-    padding: 20px;
-    margin: 0 auto;
+  .box {
+    height: auto;
+    padding: 8rem 0;
+  }
+
+  .card {
+    border-radius: 0;
+    border: 0;
+    padding: 2rem;
+    background-color: var(--vt-c-white-soft);
   }
 
   .line-through {

@@ -153,17 +153,6 @@ onMounted(() => {
     margin-bottom: 0;
   }
 
-  .p-date {
-    color: #e42646;
-
-    margin-bottom: 0;
-  }
-
-  .post-img{
-    width: 100%;
-    height: auto;
-  }
-
   .event-gallery {
     height: auto;
     padding: 8rem 0;

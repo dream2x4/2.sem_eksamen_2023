@@ -80,7 +80,7 @@
                 <h2 class="h2-box">KRÆFTVÆRKET</h2>
                 <p class="p-box">Esbjerg har i flere år manglet gængse øvelokaler med mulighed for indspilning, og her vil Kanten give muligheden for at benytte sig af et lydstudie samt et øvelokale af høj kvalitet. I kraft af Kantens vision om at hjælpe det musikalske vækstlag med at skabe musik, så vil der tilbydes en lydtekniker som ifølge aftale kan undervise i lydstudieteknik - alt efter behov. Med Kraftværkets placering i Østerbyen vil vi løfte interessen for musik, særligt for de lokale unge. Det vil vi f.eks. gøre med undervisning i øjenhøjde og med kendskab til unge i området. Kraftværket kan benyttes af alle der spiller, eller gerne vil spille musik.</p>
 
-                <p class="p-bold">PRISER PÅ MEDLEMSKAB:</p>
+                <p class="p-underline">PRISER PÅ MEDLEMSKAB:</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="p-box">Adgang til øvelokalet  i 3 md.</p>
                     <p class="p-box">300 kr.</p>
@@ -94,7 +94,7 @@
                     <p class="p-box">100 kr.</p>
                 </div>
 
-                <p class="p-bold">KONTAKT KANTEN:</p>
+                <p class="p-underline">KONTAKT KANTEN:</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="p-box">Telefon:</p>
                     <p class="p-box">28 97 11 85</p>
@@ -252,8 +252,8 @@ About
   display: none;
 }
 .tab-btn.active {
-  background: var(--vt-c-white-mute);
-  color: var(--vt-c-purple);
+  background: var(--vt-c-purple);
+  color: var(--vt-c-white-soft);
   margin-left: 0;
 }
 .content.active {

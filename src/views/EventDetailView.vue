@@ -3,83 +3,108 @@
     </div>
 
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
-        
-        <div class="col-4">
+        <div class="col-10">
             <div
             v-for="post in posts"
-            class="event-card"
+            style="width: 60%;"
             :class="{ 'has-background-success-light' : post.done}"
             >
-            <div class="card-content">
-            <div class="content">
-
-                <div class="">
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    <h5 class="mb-0">
-                    {{ post.title }}
-                    </h5>
+            <div
+                class="column"
+                :class ="{ 'has-text-success line-through' : post.done }"
+                >
+                <p class="p-date">{{ post.time }}</p>
                 </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.age }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.price }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.genre }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.performer }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.time }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.venue }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.info }}
-                </div>
-                <div
-                    class="column"
-                    :class ="{ 'has-text-success line-through' : post.done }"
-                    >
-                    {{ post.url }}
-                </div>
-                <!-- Image -->
-                <div>
-                    <img :src="post.imgURL" alt="post image" width="200" height="200">
-                </div>
-                <div class="has-text-right">
-                </div>
-                </div>
+            <div
+                class="column event-title"
+                :class ="{ 'has-text-success line-through' : post.done }"
+                >
+                <h3 class="mb-0">
+                {{ post.title }}
+                </h3>
             </div>
             </div>
         </div>
+        <div class="event-info-box col-10 d-flex">
+            <div style="width: 60%;">
+                <div
+                v-for="post in posts"
+                class="event-card"
+                :class="{ 'has-background-success-light' : post.done}"
+                >
+                    <div class="event-title">
+                        <img :src="post.imgURL" class="post-img" alt="post image">
+                    </div>
+
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Beskrivelse</p>
+                        <p>{{ post.info }}</p>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 40%;">
+                <div
+                v-for="post in posts"
+                class="event-card"
+                :class="{ 'has-background-success-light' : post.done}"
+                >
+                <div class="card-content">
+                <div class="content">
+
+                    <div class="">
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Aldersgrænse</p>
+                        <p>
+                            {{ post.age }}
+                        </p>
+                    </div>
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Pris</p>
+                        <p>{{ post.price }}</p>
+                    </div>
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Kategori</p>
+                        <p>{{ post.genre }}</p>
+                    </div>
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Kunstner</p>
+                        <p>{{ post.performer }}</p>
+                    </div>
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <p class="p-bold">Sted</p>
+                        <p>{{ post.venue }}</p>
+                    </div>
+                    <div
+                        class="column"
+                        :class ="{ 'has-text-success line-through' : post.done }"
+                        >
+                        <button href="" >KØB BILLET</button>
+                        {{ post.url }}
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
 
         </div>
 
@@ -88,7 +113,7 @@
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="15.rem" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg>  -->
-                Go back
+                ◀ Go back
             </button>
         </div>
 
@@ -171,6 +196,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+.event-title {
+    margin-bottom: 1rem;
+}
+
 .hero {
     height: 50vh;
     background-color: aqua;
@@ -188,6 +218,10 @@ onMounted(() => {
 
 .event-card {
     margin-bottom: 6rem;
+}
+
+.event-info-box {
+    gap: 2rem;
 }
 </style>
 
