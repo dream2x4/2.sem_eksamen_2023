@@ -3,7 +3,8 @@
     </div>
 
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
-        <div class="col-10">
+        
+        <div class="col-4">
             <div
             v-for="post in posts"
             class="event-card"

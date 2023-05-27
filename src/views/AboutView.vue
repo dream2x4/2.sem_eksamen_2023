@@ -114,11 +114,22 @@
 
     <div class="box d-flex justify-content-center align-items-center">
         <div class="box-text col-10">
-        <h2 class="h2-box">HVOR ER VI?</h2>
-        <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
-        <button>BLIV MEDLEM</button>
+        <h2 class="h2-box">FIND OS</h2>
+        <div class="d-flex maps">
+            <div style="width: 50%;">
+                <h3>KANTEN</h3>
+                <div style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Finsensgade%201%206700%20Esbjerg+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+            </div>
+            <div style="width: 50%;">
+                <h3>KRÆFTVÆRKET</h3>
+                <div style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Gl%20Novrupvej%2014%206705%20Esbjerg%20Denmark+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe></div>
+            </div>
+
+        </div>
         </div>
     </div>
+
+    
   
   </template>
   
@@ -189,7 +200,8 @@ onMounted(() => {
     }
 
     .box {
-        height: 80vh;
+        height: auto;
+        padding: 8rem 0;
     }
     
     .card-box {
@@ -214,9 +226,6 @@ About
 ===============
 */
 
-.about {
-    padding: 8rem 0;
-}
 .tab-btn:nth-child(1) {
   border-top-left-radius: var(--radius);
 }
@@ -237,10 +246,7 @@ About
   color: var(--vt-c-grey);
   margin-left: 0;
 }
-.about-content {
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
-}
+
 /* hide content */
 .content {
   display: none;
@@ -252,6 +258,10 @@ About
 }
 .content.active {
   display: block;
+}
+
+.maps {
+    gap: 1rem;
 }
   </style>
   

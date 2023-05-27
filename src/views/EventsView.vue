@@ -12,7 +12,8 @@
     <div class="box-text col-6">
       <h2 class="h2-box">EVENTS</h2>
       <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
-      <button>SE EVENTS ▼</button>
+      <button class="event-btn">SE EVENTS ▼</button>
+      <button class="event-btn" >SE GALLERI ▼</button>
     </div>
   </div>
 
@@ -26,66 +27,16 @@
       <div class="card-content">
         <div class="content">
 
-          <div class="">
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              <h5 class="mb-0">
-                {{ post.title }}
-              </h5>
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.age }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.price }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.genre }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.performer }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
+          <div>
+            <p class="p-date">
               {{ post.time }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.venue }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.info }}
-            </div>
-            <div
-              class="column"
-              :class ="{ 'has-text-success line-through' : post.done }"
-              >
-              {{ post.url }}
-            </div>
+            </p>
+            <h3>
+              {{ post.title }}
+              </h3>
             <!-- Image -->
             <div>
-              <img :src="post.imgURL" alt="post image" width="200" height="200">
+              <img :src="post.imgURL" class="post-img" alt="post image">
             </div>
             <div class="has-text-right">
             </div>
@@ -94,6 +45,12 @@
       </div>
     </div>
 
+    </div>
+  </div>
+
+  <div class="event-gallery d-flex justify-content-center align-items-center">
+    <div class="box-img col-10">
+      <h2 class="h2-box">GALLERI</h2>
     </div>
   </div>
 
@@ -174,6 +131,15 @@ onMounted(() => {
     background-repeat: no-repeat;
   }
 
+  .event-btn:first-of-type {
+    margin-right: 1rem;
+  }
+
+  .box {
+    height: auto;
+    padding: 8rem 0;
+  }
+
   .card-box {
     height: auto;
     padding: 8rem 0;
@@ -185,5 +151,21 @@ onMounted(() => {
 
   .event-card:last-of-type {
     margin-bottom: 0;
+  }
+
+  .p-date {
+    color: #e42646;
+
+    margin-bottom: 0;
+  }
+
+  .post-img{
+    width: 100%;
+    height: auto;
+  }
+
+  .event-gallery {
+    height: auto;
+    padding: 8rem 0;
   }
 </style>

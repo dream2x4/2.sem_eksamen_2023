@@ -105,6 +105,11 @@ const isActive = ref(true)
   }
 
   .hero-btn:first-of-type {
-    margin-right: 2rem;
+    margin-right: 1rem;
+  }
+
+  .box {
+    height: auto;
+    padding: 8rem 0;
   }
 </style>
