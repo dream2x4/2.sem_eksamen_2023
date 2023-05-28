@@ -3,6 +3,16 @@
   <div class="hero d-flex justify-content-center align-items-center">
     <div class="hero-text-box col-10 d-flex flex-column align-items-center">
       <h1>EVENTS</h1>
+
+      <div class="filter-box d-flex justify-content-start">
+        <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img src="../assets/img/hero_img.jpg" alt=""></button>
+        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana">UX</button>
+        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex">Vertex</button>
+        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest">Gæst</button>
+        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web">Xmas</button>
+        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft">Deft</button>
+      </div>
+
       <p class="p-hero">OPLEV MUSIK UD OVER KANTEN!</p>
     </div>
   </div>
@@ -117,6 +127,9 @@ onMounted(() => {
     posts.value = fbPosts
   })
 })
+
+//filter
+
 
 </script>
 
