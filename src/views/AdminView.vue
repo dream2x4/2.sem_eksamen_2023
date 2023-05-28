@@ -5,7 +5,7 @@
 
 
   <div class="box d-flex flex-column justify-content-center align-items-center">
-    <div class="col-6">
+    <div class="card-box col-6" style="height: fit-content; padding: 2rem;">
 
       <div>
       </div>
@@ -17,7 +17,7 @@
       <form
       @submit.prevent="addPost"
       >
-        <div class="event-adder mb-5">
+        <div class="event-adder">
           <p class="control is-expanded mb-2">
             <input
               v-model="newEventTitle"
@@ -94,7 +94,7 @@
           <input class="mb-2" type="file" label="File input" @change="uploadImg">
       <!--    <button @click.prevent="firebaseAddSingleItem()" :disabled="addItemData.uploadBtnDisabled">Add item</button> -->
           <!-- Control -->
-          <p class="control">
+          <p class="control mb-0">
             <button
             :disabled="!newEventTitle + !newEventAge + !newEventPrice + !newEventGenre + !newEventPerformer + !newEventTime + !newEventVenue + !newEventInfo + !newEventUrl + addItemData.uploadBtnDisabled"
             class="button is-info"
@@ -104,8 +104,11 @@
           </p>
         </div>
       </form>
-      
     </div>
+
+    <div style="margin-bottom: 4rem;"></div>
+    
+    <!-- Added Content -->
     <div class="col-10">
     <div class="">
       <!-- Card -->

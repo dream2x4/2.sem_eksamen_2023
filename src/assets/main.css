@@ -148,7 +148,7 @@ html, body {
 }
 
 .card-box {
-  box-shadow: 0 0 2rem #000000;
+  box-shadow: 0 0 2rem var(--vt-c-black);
   height: 100vh;
 
   background-color: var(--vt-c-grey);

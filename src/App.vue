@@ -60,7 +60,7 @@
               <h3>TILMELD NYHEDSBREV</h3>
               <div class="indicates-required mailchimp-text d-none"><span class="asterisk">*</span> indicates required</div>
       <div class="mc-field-group">
-        <label class="mailchimp-text" for="mce-EMAIL">E-mail Adresse  <span class="asterisk">*</span>
+        <label class="mailchimp-text" for="mce-EMAIL">E-mail adresse  <span class="asterisk">*</span>
       </label>
         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
         <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
@@ -81,11 +81,8 @@
 
       <!--End mc_embed_signup-->
     </div>
-    <div class="d-flex flex-column justify-content-center" style="margin-top: 2rem;">
-      <div class="d-flex justify-content-center">
-        <img src="@/assets/img/kanten_logo.png" alt="" style="width: 10%;">
-      </div>
-      <p class="text-center p-footer" style="margin-top: 1rem;">COPYRIGHT ©KANTEN 2022</p>
+    <div class="d-flex flex-column justify-content-center" style="margin: 2rem 0 1rem 0;">
+      <p class="text-center p-footer" style="margin-top: 1rem;">Copyright ©Kanten 2022</p>
     </div>
   </div>
 
@@ -231,6 +228,7 @@ nav a:first-of-type {
   font-size: 1rem;
   margin-bottom: 0.4rem;
   color: var(--vt-c-grey-light);
+  width: fit-content;
 }
 
 .footer-links:hover {
@@ -245,6 +243,12 @@ nav a:first-of-type {
   background-color: var(--vt-c-white-soft);
   border: none;
   margin-bottom: 0.4rem;
+}
+
+.required:focus, .input:focus {
+  outline: none;
+
+  color: var(--vt-c-white-grey);
 }
 
 .mailchimp-btn {

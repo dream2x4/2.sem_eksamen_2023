@@ -3,14 +3,14 @@
     <div class="hero d-flex justify-content-center align-items-center">
     </div>
   
-    <!-- Box -->
+    <!-- Title -->
   
     <div class="box d-flex flex-column justify-content-center align-items-center">
         <h1>MEDLEMSKAB</h1>
         <p class="p-hero">UNGDOMSKULTUR. DIT FÆLLESKAB!</p>
     </div>
   
-    <!-- Card-box -->
+    <!-- Info -->
   
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
         

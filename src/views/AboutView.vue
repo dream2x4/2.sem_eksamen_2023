@@ -3,7 +3,7 @@
     <div class="hero d-flex justify-content-center align-items-center">
     </div>
   
-    <!-- Box -->
+    <!-- Tags -->
   
     <div class="box d-flex justify-content-center">
         <article class="about d-flex justify-content-center">
@@ -66,12 +66,9 @@
                 </div>
             </div>
         </article>
-
-        
-
     </div>
   
-    <!-- Card-box -->
+    <!-- Kræftværket -->
   
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
         
@@ -111,6 +108,8 @@
             <div class="col-4"></div>
         </div>
     </div>
+
+    <!-- Google Maps -->
 
     <div class="box d-flex justify-content-center align-items-center">
         <div class="box-text col-10">
@@ -163,29 +162,7 @@ onMounted(() => {
         btns[newSelected].classList.add("active")
         btn = newSelected
     }
-
-    /* about.addEventListener("click", function (e) {
-    const id = e.target.dataset.id; */
-    //console.log(id)
-    
-    /* if (id) {
-      btns.forEach(function(btn) {
-      btn.classList.remove('active');
-      })
-    }
-    
-    e.target.classList.add('active');
-    
-    articles.forEach(function(article) {
-      article.classList.remove('active');
-    })
-    
-    const element = document.getElementById(id);
-    element.classList.add("active")
-    }); */
 })
-  
-
   </script>
   
   <style scoped>
@@ -209,9 +186,7 @@ onMounted(() => {
         padding: 8rem 0;
     }
 
-/* test */
-
-/*  global classes */
+/* tags */
 
 /* section */
 
@@ -259,6 +234,8 @@ About
 .content.active {
   display: block;
 }
+
+/* Google Maps */
 
 .maps {
     gap: 1rem;

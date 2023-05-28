@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <!-- Box -->
+  <!-- Info -->
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-4"></div>
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <!-- Card-box -->
+  <!-- Activities -->
 
   <div class="card-box d-flex flex-column justify-content-center align-items-center">
     
@@ -74,7 +74,7 @@
 
   </div>
 
-  <!-- Box -->
+  <!-- Membership -->
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-4"></div>

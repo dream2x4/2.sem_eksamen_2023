@@ -1,16 +1,20 @@
 <template>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <!-- Card -->
+    <div class="card-box col-4 flex-column d-flex justify-content-center" style="height: fit-content; padding: 2rem;">
         <div class="col-3 flex-column d-flex justify-content-center">
             <h2>REGISTER</h2>
             <p><input type="text" placeholder="Email" v-model="email"/></p>
             <p style="margin-bottom: 2rem;"><input type="password" placeholder="Password" v-model="password"/></p>
-            <p><button @click="register">OPRET</button></p>
+            <p class="mb-0"><button @click="register">OPRET</button></p>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+//Register
+
 import { 
     getAuth,
     createUserWithEmailAndPassword

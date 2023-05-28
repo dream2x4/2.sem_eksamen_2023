@@ -4,6 +4,7 @@
     <div class="hero-text-box col-10 d-flex flex-column align-items-center">
       <h1>EVENTS</h1>
 
+      <!-- Filter -->
       <div class="filter-box d-flex justify-content-center" style="gap: 1rem; margin: 2rem 0;">
         <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;"></button>
@@ -17,6 +18,7 @@
     </div>
   </div>
 
+  <!-- Info -->
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-4"></div>
     <div class="box-text col-6">
@@ -31,6 +33,7 @@
     </div>
   </div>
 
+  <!-- Event Cards -->
   <div class="card-box d-flex justify-content-center align-items-center" id="events">
     <div class="col-10">
       <div @click="redirect(post.id)" style="cursor: pointer"
@@ -155,6 +158,8 @@ onMounted(() => {
     background-repeat: no-repeat;
   }
 
+  /* Filter */
+
   .filter-btn {
     padding: 0;
     background-color: transparent;
@@ -176,6 +181,8 @@ onMounted(() => {
     margin-right: 1rem;
   }
 
+  /* Card */
+
   .box {
     height: auto;
     padding: 8rem 0;
@@ -193,6 +200,8 @@ onMounted(() => {
   .event-card:last-of-type {
     margin-bottom: 0;
   }
+
+  /* Gallery */
 
   .event-gallery {
     height: auto;

@@ -1,7 +1,9 @@
 <template>
+    <!-- Hero -->
     <div class="hero d-flex justify-content-center align-items-center">
     </div>
-
+    
+    <!-- Event Detail -->
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
         <div class="col-10">
             <div
@@ -108,6 +110,7 @@
 
         </div>
 
+        <!-- Go Back Botton -->
         <div class="col-10">
             <button class="button" @click="goBack()">
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="15.rem" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -152,19 +155,6 @@ const goBack = () => {
 }
 
 //Posts
-
-const posts = ref([
-  /*{
-    id: 'id1',
-    content: 'Shave my butt',
-    done: false
-  },
-  {
-  id: 'id2',
-    content: 'Wash my butt',
-    done: true
-  }*/
-])
 
 //get posts
 onMounted(() => {
