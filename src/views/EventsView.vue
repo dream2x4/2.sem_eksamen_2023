@@ -4,13 +4,13 @@
     <div class="hero-text-box col-10 d-flex flex-column align-items-center">
       <h1>EVENTS</h1>
 
-      <div class="filter-box d-flex justify-content-start">
-        <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img src="../assets/img/hero_img.jpg" alt=""></button>
-        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana">UX</button>
-        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex">Vertex</button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest">Gæst</button>
-        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web">Xmas</button>
-        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft">Deft</button>
+      <div class="filter-box d-flex justify-content-center" style="gap: 1rem; margin: 2rem 0;">
+        <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.jpg" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.jpg" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.jpg" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.jpg" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gæst_logo.png" alt="" style="width: 100%;"></button>
       </div>
 
       <p class="p-hero">OPLEV MUSIK UD OVER KANTEN!</p>
@@ -58,11 +58,18 @@
     </div>
   </div>
 
+  <!-- Gallery -->
+
   <div class="event-gallery d-flex justify-content-center align-items-center">
     <div class="box-img col-10">
       <h2 class="h2-box">GALLERI</h2>
     </div>
+
+    
+
   </div>
+
+  
 
 </template>
 
@@ -142,6 +149,23 @@ onMounted(() => {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  .filter-btn {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .filter-btn:hover {
+    background-color: transparent;
+  }
+
+  .filter-img {
+    transition: 0.25s;
+  }
+
+  .filter-img:hover {
+    transform: scale(1.05);
   }
 
   .event-btn:first-of-type {
