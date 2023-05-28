@@ -28,15 +28,39 @@
 
 <div class="footer d-flex flex-column align-items-center">
   <div class="col-10">
-    <div>
+
+    <div class="d-flex" style="gap: 1rem;">
+      <div style="width: 25%;">
+        <h3>KANTEN</h3>
+        <p class="p-footer">Gl Novrupvej 14. 6705 Esbjerg Ø</p>
+        <p class="p-footer">Tlf. +45 28 97 11 85</p>
+        <p class="p-footer">E-mail: musikforeningenkanten@gmail.com</p>
+      </div>
+
+      <div class="d-flex flex-column" style="width: 25%;">
+        <h3>ASSOCIEREDE</h3>
+        <a href="https://www.esbjerg.dk/" class="footer-link">Esbjerg Kommune</a>
+        <a href="https://www.kuuf.dk/" class="footer-link">KUUF</a>
+        <a href="https://www.husetesbjerg.dk/" class="footer-link">Huset Esbjerg</a>
+      </div>
+
+      <div style="width: 25%;" class="d-flex flex-column">
+        <h3>LINKS</h3>
+        <RouterLink to="/" class="footer-link">Hjem</RouterLink>
+        <RouterLink to="/about" class="footer-link">Om os</RouterLink>
+        <RouterLink to="/events" class="footer-link">Events</RouterLink>
+        <RouterLink to="/volunteer" class="footer-link">Frivillig</RouterLink>
+        <RouterLink to="/membership" class="footer-link">Medlemskab</RouterLink>
+      </div>
+
       <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup" class="">
+      <div id="mc_embed_signup" style="width: 25%;">
           <form action="https://gmail.us11.list-manage.com/subscribe/post?u=123d7e5a3eab6ce581403b28d&amp;id=be82a48b18&amp;f_id=002eb8e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
               <div id="mc_embed_signup_scroll">
-              <h3>Tilmeld Nyhedsbrev</h3>
-              <div class="indicates-required mailchimp-text"><span class="asterisk">*</span> indicates required</div>
+              <h3>TILMELD NYHEDSBREV</h3>
+              <div class="indicates-required mailchimp-text d-none"><span class="asterisk">*</span> indicates required</div>
       <div class="mc-field-group">
-        <label class="mailchimp-text" for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+        <label class="mailchimp-text" for="mce-EMAIL">E-mail Adresse  <span class="asterisk">*</span>
       </label>
         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
         <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
@@ -48,7 +72,7 @@
           <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_123d7e5a3eab6ce581403b28d_be82a48b18" tabindex="-1" value=""></div>
               <div class="optionalParent">
                   <div class="clear foot">
-                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mailchimp-btn">
+                      <input type="submit" value="TILMELD" name="subscribe" id="mc-embedded-subscribe" class="mailchimp-btn">
                   </div>
               </div>
           </div>
@@ -57,8 +81,11 @@
 
       <!--End mc_embed_signup-->
     </div>
-    <div class="d-flex flex-column justify-content-center">
-      <p class="text-center" style="margin-top: 1rem;">COPYRIGHT ©KANTEN 2022</p>
+    <div class="d-flex flex-column justify-content-center" style="margin-top: 2rem;">
+      <div class="d-flex justify-content-center">
+        <img src="@/assets/img/kanten_logo.png" alt="" style="width: 10%;">
+      </div>
+      <p class="text-center p-footer" style="margin-top: 1rem;">COPYRIGHT ©KANTEN 2022</p>
     </div>
   </div>
 
@@ -68,13 +95,6 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-
-import { 
-  collection, onSnapshot, 
-  addDoc, doc, deleteDoc, updateDoc,
-  query, orderBy, limit
-} from 'firebase/firestore';
-import { db } from '@/firebase';
 
 //Log-in
 
@@ -101,50 +121,6 @@ const handleSignOut = () => {
     router.push("/");
   });
 };
-
-//Firebase refs
-
-const todosCollectionRef = collection(db, 'todos')
-const todosCollectionQuery = query(todosCollectionRef, orderBy('date', 'desc'), limit(5))
-
-//Todos
-
-const todos = ref([
-  /*{
-    id: 'id1',
-    content: 'Shave my butt',
-    done: false
-  },
-  {
-  id: 'id2',
-    content: 'Wash my butt',
-    done: true
-  }*/
-])
-
-//get todos
-onMounted(() => {
-  onSnapshot(todosCollectionQuery, (querySnapshot) => {
-    const fbTodos = []
-    querySnapshot.forEach((doc) => {
-      const todo = {
-        id: doc.id,
-        title: doc.data().title,
-        done: doc.data().done,
-        age: doc.data().age,
-        price: doc.data().price,
-        genre: doc.data().genre,
-        performer: doc.data().performer,
-        time: doc.data().time,
-        venue: doc.data().venue,
-        info: doc.data().info,
-        url: doc.data().url,
-      }
-      fbTodos.push(todo)
-    })
-    todos.value = fbTodos
-  })
-})
 
 </script>
 
@@ -241,21 +217,41 @@ nav a:first-of-type {
   color: var(--vt-c-purple);
 }
 
+.p-footer {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
 .footer {
-  background-color: var(--vt-c-purple);
+  padding: 4rem 0 0 0;
+  background-color: var(--vt-c-black);
+}
+
+.footer-link {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--vt-c-grey-light);
+}
+
+.footer-links:hover {
+  color: var(--vt-c-white-soft);
 }
 
 .mailchimp-text {
-  color: var(--vt-c-white-soft);
+  color: var(--vt-c-grey-light);
 }
 
 .required {
   background-color: var(--vt-c-white-soft);
+  border: none;
+  margin-bottom: 0.4rem;
 }
 
 .mailchimp-btn {
-  background-color: var(--vt-c-white-soft);
-  color: var(--vt-c-black);
+  background-color: var(--vt-c-purple);
+  color: var(--vt-c-white-soft);
+  font-weight: 700;
+  border: none;
 }
 
 </style>

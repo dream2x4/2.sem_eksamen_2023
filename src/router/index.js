@@ -20,6 +20,10 @@ const router = createRouter({
       },
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
 });
 
 const getCurrentUser = () => {

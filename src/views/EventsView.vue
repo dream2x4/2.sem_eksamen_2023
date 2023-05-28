@@ -6,11 +6,11 @@
 
       <div class="filter-box d-flex justify-content-center" style="gap: 1rem; margin: 2rem 0;">
         <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.jpg" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.jpg" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.jpg" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.jpg" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gæst_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gaest_logo.png" alt="" style="width: 100%;"></button>
       </div>
 
       <p class="p-hero">OPLEV MUSIK UD OVER KANTEN!</p>
@@ -22,12 +22,16 @@
     <div class="box-text col-6">
       <h2 class="h2-box">EVENTS</h2>
       <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
-      <button class="event-btn">SE EVENTS ▼</button>
-      <button class="event-btn" >SE GALLERI ▼</button>
+      <a href="#events">
+        <button class="event-btn" >SE EVENTS ▼</button>
+      </a>
+      <a href="#gallery">
+        <button class="event-btn" >SE GALLERI ▼</button>
+      </a>
     </div>
   </div>
 
-  <div class="card-box d-flex justify-content-center align-items-center">
+  <div class="card-box d-flex justify-content-center align-items-center" id="events">
     <div class="col-10">
       <div @click="redirect(post.id)" style="cursor: pointer"
       v-for="post in posts"
@@ -60,7 +64,7 @@
 
   <!-- Gallery -->
 
-  <div class="event-gallery d-flex justify-content-center align-items-center">
+  <div class="event-gallery d-flex justify-content-center align-items-center" id="gallery">
     <div class="box-img col-10">
       <h2 class="h2-box">GALLERI</h2>
     </div>

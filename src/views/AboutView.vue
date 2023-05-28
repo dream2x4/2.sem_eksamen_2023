@@ -96,8 +96,8 @@
 
                 <p class="p-underline">KONTAKT KANTEN:</p>
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="p-box">Telefon:</p>
-                    <p class="p-box">28 97 11 85</p>
+                    <p class="p-box">Tlf:</p>
+                    <p class="p-box">+45 28 97 11 85</p>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="p-box">Email:</p>

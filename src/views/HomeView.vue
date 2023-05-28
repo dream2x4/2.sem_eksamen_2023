@@ -5,8 +5,8 @@
       <h1>KANTEN</h1>
       <p class="p-hero">ESBJERGS NYE KULTURFÆLLESKAB</p>
       <div class="hero-btn-container">
-        <button class="hero-btn">SE EVENTS</button>
-        <button class="hero-btn">BLIV FRIVILLIG</button>
+        <RouterLink to="/events"><button class="hero-btn">SE EVENTS</button></RouterLink>
+        <RouterLink to="/volunteer"><button class="hero-btn">BLIV FRIVILLIG</button></RouterLink>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
       <h2 class="h2-box">OM KANTEN</h2>
       <p>Kanten Esbjerg er et inkluderende initiativ skabt af frivillige unge esbjergensere, som brænder for at skabe et nyt musikkultur tiltag, spillested og studie, der bidrager til et sikkert byliv.</p>
       <p class="p-box">Diversitet og mangfoldighed er vores kerneværdier og vores musikprogram er repræsentativt og bredt inkluderende.</p>
-      <button>LÆS MERE</button>
+      <RouterLink to="/about"><button>LÆS MERE</button></RouterLink>
     </div>
   </div>
 
@@ -81,7 +81,7 @@
     <div class="box-text col-6">
       <h2 class="h2-box">MEDLEMSKAB</h2>
       <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
-      <button>BLIV MEDLEM</button>
+      <RouterLink to="/membership"><button>BLIV MEDLEM</button></RouterLink>
     </div>
   </div>
 

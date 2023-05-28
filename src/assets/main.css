@@ -132,6 +132,9 @@ button:hover {
 
 html, body {
   background-color: var(--vt-c-grey);
+
+  background-image: url(../assets/img/Kanten_pattern.jpg);
+  background-repeat: repeat;
 }
 
 /*box*/
@@ -145,8 +148,10 @@ html, body {
 }
 
 .card-box {
-  box-shadow: 0 0 2rem #0e0e0e;
+  box-shadow: 0 0 2rem #000000;
   height: 100vh;
+
+  background-color: var(--vt-c-grey);
 }
 
 input {
