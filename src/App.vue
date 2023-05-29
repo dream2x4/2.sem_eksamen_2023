@@ -1,4 +1,5 @@
 <template>
+  <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid p-0 d-flex align-items-start">

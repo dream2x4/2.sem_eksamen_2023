@@ -7,7 +7,7 @@
   
     <div class="box d-flex justify-content-center">
         <article class="about d-flex justify-content-center">
-            <div class="col-6">
+            <div class="col-10 col-md-6">
                 <div class="about-content">
                     <!-- single item -->
                     <div class="content active" id="history">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-3 d-flex align-items-center">
+            <div class="col-10 col-md-3 d-flex align-items-center">
                 <div class="div">
                     <button class="tab-btn active d-flex align-items-center" data-id="history">
                         ◀ OM OS
@@ -73,7 +73,7 @@
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
         
         <div class="d-flex justify-content-center align-items-center">
-            <div class="col-6">
+            <div class="col-10 col-sm-6">
                 <h2 class="h2-box">KRÆFTVÆRKET</h2>
                 <p class="p-box">Esbjerg har i flere år manglet gængse øvelokaler med mulighed for indspilning, og her vil Kanten give muligheden for at benytte sig af et lydstudie samt et øvelokale af høj kvalitet. I kraft af Kantens vision om at hjælpe det musikalske vækstlag med at skabe musik, så vil der tilbydes en lydtekniker som ifølge aftale kan undervise i lydstudieteknik - alt efter behov. Med Kraftværkets placering i Østerbyen vil vi løfte interessen for musik, særligt for de lokale unge. Det vil vi f.eks. gøre med undervisning i øjenhøjde og med kendskab til unge i området. Kraftværket kan benyttes af alle der spiller, eller gerne vil spille musik.</p>
 
@@ -105,7 +105,7 @@
                     <p class="p-box">GL Novrupvej 14, 6705 Esbjerg Ø</p>
                 </div>
             </div>
-            <div class="col-4"></div>
+            <div class="kv-img col-4"></div>
         </div>
     </div>
 
@@ -115,11 +115,11 @@
         <div class="box-text col-10">
         <h2 class="h2-box">FIND OS</h2>
         <div class="d-flex maps">
-            <div style="width: 50%;">
+            <div class="map">
                 <h3>KANTEN</h3>
                 <div style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Finsensgade%201%206700%20Esbjerg+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
             </div>
-            <div style="width: 50%;">
+            <div class="map">
                 <h3>KRÆFTVÆRKET</h3>
                 <div style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Gl%20Novrupvej%2014%206705%20Esbjerg%20Denmark+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure distance on map</a></iframe></div>
             </div>
@@ -240,5 +240,49 @@ About
 .maps {
     gap: 1rem;
 }
-  </style>
+
+.map {
+    width: 50%;
+}
+
+@media (max-width: 992px) {
+    .tab-btn {
+        font-size: 1.2rem;
+
+        padding: 0.4rem 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .box {
+        padding: 4rem 0;
+    }
+
+    .card-box {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .kv-img {
+        display: none;
+    }
+
+    .maps {
+        flex-direction: column;
+    }
+
+    .map {
+        width: 100%;
+    }
+}
+
+
+</style>
   

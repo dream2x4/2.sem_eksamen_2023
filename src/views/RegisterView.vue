@@ -1,6 +1,6 @@
 <template>
     <!-- Card -->
-    <div class="card-box col-4 flex-column d-flex justify-content-center" style="height: fit-content; padding: 2rem;">
+    <div class="card-box col-10 col-sm-6 col-md-4 flex-column d-flex justify-content-center" style="height: fit-content; padding: 2rem;">
         <div class="col-3 flex-column d-flex justify-content-center">
             <h2>REGISTER</h2>
             <p><input type="text" placeholder="Email" v-model="email"/></p>

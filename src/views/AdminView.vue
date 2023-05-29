@@ -5,7 +5,7 @@
 
 
   <div class="box d-flex flex-column justify-content-center align-items-center">
-    <div class="card-box col-6" style="height: fit-content; padding: 2rem;">
+    <div class="card-box col-10 col-md-6" style="height: fit-content; padding: 2rem;">
 
       <div>
       </div>
@@ -107,8 +107,6 @@
         </div>
       </form>
     </div>
-
-    <div style="margin-bottom: 4rem;"></div>
     
     <!-- Added Content -->
     <div class="col-10">
@@ -190,7 +188,7 @@
                 </div>
                 <!-- Image -->
                 <div>
-                  <img :src="post.imgURL" class="mb-2" alt="post image" style="height: 200px;">
+                  <img :src="post.imgURL" class="mb-2" alt="post image" style="width: 100%;">
                 </div>
                 <!-- Check & delete btn -->
                 <div class="d-flex justify-content-end">
@@ -433,6 +431,7 @@ uploadTask.on('state_changed',
   .box {
     height: auto;
     padding: 8rem 0;
+    gap: 3rem;
   }
 
   .card {
@@ -444,5 +443,12 @@ uploadTask.on('state_changed',
 
   .line-through {
     text-decoration: line-through;
+  }
+
+  @media (max-width: 576px) {
+    .box {
+      flex-direction: column;
+      padding: 4rem 0;
+    }
   }
 </style>

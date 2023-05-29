@@ -8,7 +8,7 @@
         <div class="col-10">
             <div
             v-for="post in posts"
-            style="width: 60%;"
+            class="event-title"
             :class="{ 'has-background-success-light' : post.done}"
             >
             <div
@@ -28,13 +28,13 @@
             </div>
         </div>
         <div class="event-info-box col-10 d-flex">
-            <div style="width: 60%;">
+            <div class="box-card-main">
                 <div
                 v-for="post in posts"
                 class="event-card"
                 :class="{ 'has-background-success-light' : post.done}"
                 >
-                    <div class="event-title">
+                    <div class="event-img" style="margin-bottom: 1rem;">
                         <img :src="post.imgURL" class="post-img" alt="post image">
                     </div>
 
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div style="width: 40%;">
+            <div class="box-card-info">
                 <div
                 v-for="post in posts"
                 class="event-card"
@@ -225,8 +225,48 @@ onMounted(() => {
     margin-bottom: 6rem;
 }
 
+.event-title {
+    width: 60%;
+}
+
 .event-info-box {
     gap: 2rem;
 }
+
+.box-card-main {
+    width: 60%;
+}
+
+.box-card-info {
+    width: 40%;
+}
+
+@media (max-width: 576px) {
+
+    .event-title {
+        width: 100%;
+    }
+    .card-box {
+        padding: 4rem 0;
+    }
+
+    .event-info-box {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 2rem;
+    }
+
+    .event-card {
+        margin: 0;
+    }
+
+    .box-card-main {
+        width: 100%;
+    }
+
+    .box-card-info {
+        width: 100%;
+    }
+  }
 </style>
 
