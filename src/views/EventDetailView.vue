@@ -98,8 +98,10 @@
                         class="column"
                         :class ="{ 'has-text-success line-through' : post.done }"
                         >
-                        <button href="" >KØB BILLET</button>
-                        {{ post.url }}
+                        <a :href="post.url" target="_blanc" >
+                            <button>KØB BILLET</button>
+                        </a>
+                        
                     </div>
                     </div>
                 </div>
@@ -155,6 +157,19 @@ const goBack = () => {
 }
 
 //Posts
+
+const posts = ref([
+  /*{
+    id: 'id1',
+    content: 'Shave my butt',
+    done: false
+  },
+  {
+  id: 'id2',
+    content: 'Wash my butt',
+    done: true
+  }*/
+])
 
 //get posts
 onMounted(() => {

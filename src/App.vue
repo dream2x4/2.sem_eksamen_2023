@@ -1,25 +1,35 @@
 <template>
   <header>
-    <RouterLink class="logo" to="/">
-      <img alt="" src="@/assets/img/kanten_logo.png" width="104.83" height="90" />
-    </RouterLink>
-
-    <div class="wrapper ">
-
-      <nav>
-        <div class="nav-container">
-          <RouterLink to="/">HJEM</RouterLink>
-          <RouterLink to="/about">OM OS</RouterLink>
-          <RouterLink to="/events">EVENTS</RouterLink>
-          <RouterLink to="/volunteer">FRIVILLIG</RouterLink>
-          <RouterLink to="/membership">MEDLEMSKAB</RouterLink>
-          <!--<RouterLink to="/admin">ADMIN</RouterLink>-->
-          <!--<RouterLink to="/register">REGISTER</RouterLink>-->
-          <!--<RouterLink to="/sign-in">LOGIN</RouterLink>-->
-          <button class="log-out-btn" @click="handleSignOut" v-if="isLoggedIn">LOG UD</button>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid p-0 d-flex align-items-start">
+        <RouterLink class="logo" to="/"><img alt="" src="@/assets/img/kanten_logo.png" class="logo-img" /></RouterLink>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span><img alt="" src="@/assets/img/nav-toggler-icon.png" width="30" height="30"/></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <RouterLink to="/">HJEM</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/about">OM OS</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/events">EVENTS</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/volunteer">FRIVILLIG</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/membership">MEDLEMSKAB</RouterLink>
+            </li>
+            <li class="nav-item">
+              <button class="log-out-btn" @click="handleSignOut" v-if="isLoggedIn">LOG UD</button>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <RouterView />
@@ -123,10 +133,7 @@ const handleSignOut = () => {
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-  justify-content: space-between;
-  padding: 0;
+  width: 100%;
 
   position: absolute;
   z-index: 1;
@@ -134,7 +141,11 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+}
+
+.logo-img {
+  width: auto;
+  height: 90px;
 }
 
 nav {
@@ -148,29 +159,41 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--vt-c-grey);
+  background-color: var(--vt-c-white-soft);
+}
+
+nav a.router-link-exact-active.logo {
+  color: var(--vt-c-grey);
+  background-color: transparent;
 }
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    width: 100%;
-    font-size: 16px;
-    display: flex;
-    place-items: center;
-  }
+.navbar-toggler {
+  margin-right: 2rem;
+  outline: none;
+  border: none;
+  color: transparent;
+}
 
-  .logo {
-    margin: 1rem 2rem 0 2rem;
-  }
+.navbar-toggler:hover {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-collapse {
+  justify-content: end;
+}
+
+/*@media (min-width: 1024px) {
 
   header .wrapper {
     display: flex;
@@ -191,13 +214,7 @@ nav a:first-of-type {
     padding: 0 2rem;
   }
 
-  nav a.router-link-exact-active {
-  color: var(--vt-c-grey);
-  background-color: var(--vt-c-white-soft);
-}
-
-
-}
+}*/
 
 .log-out-btn {
   width: auto;
@@ -256,6 +273,16 @@ nav a:first-of-type {
   color: var(--vt-c-white-soft);
   font-weight: 700;
   border: none;
+}
+
+@media (max-width: 768px) {
+  nav a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  
 }
 
 </style>

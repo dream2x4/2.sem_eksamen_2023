@@ -170,3 +170,66 @@ input:focus, .input:focus {
 
   color: var(--vt-c-white-soft);
 }
+
+/* Scale */
+
+@media (max-width: 1200px) {
+
+  /* Text */
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  /*buttons*/
+  button {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 922px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .p-hero {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .p-hero {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+
+  .card-box {
+    height: 70vh;
+  }
+}

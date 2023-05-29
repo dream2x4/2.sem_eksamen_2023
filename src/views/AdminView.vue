@@ -43,12 +43,14 @@
               >
           </p>
           <p class="control is-expanded mb-2">
-            <input
-              v-model="newEventGenre"
-              class="input" 
-              type="text" 
-              placeholder="Tilføj kategori"
-              >
+              <select v-model="newEventGenre" >
+                <option value="">Ingen</option>
+                <option value="Deft">Deft</option>
+                <option value="Xmas">Xmas</option>
+                <option value="Mana">Mana</option>
+                <option value="Vertex">Vertex</option>
+                <option value="Gæst">Gæst</option>
+              </select>
           </p>
           <p class="control is-expanded mb-2">
             <input

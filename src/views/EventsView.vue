@@ -6,10 +6,10 @@
 
       <!-- Filter -->
       <div class="filter-box d-flex justify-content-center" style="gap: 1rem; margin: 2rem 0;">
-        <button type="button" class="filter-btn All" @click="$event => changeCategory('All')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn All" @click="$event => changeCategory('False')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Guest')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;"></button>
+        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Gæst')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gaest_logo.png" alt="" style="width: 100%;"></button>
       </div>
@@ -20,7 +20,9 @@
 
   <!-- Info -->
   <div class="box d-flex justify-content-center align-items-center">
-    <div class="box-img col-4"></div>
+    <div class="box-img col-4">
+      <img src="../assets/img/om_Kanten.png" alt="" style="width: 90%;">
+    </div>
     <div class="box-text col-6">
       <h2 class="h2-box">EVENTS</h2>
       <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
@@ -46,6 +48,7 @@
 
           <div>
             <p class="p-date">
+              {{ post.genre }}
               {{ post.time }}
             </p>
             <h3>
@@ -117,33 +120,49 @@ const posts = ref([
   }*/
 ])
 
+
+
 //get posts
-onMounted(() => {
+const loadData = (genre = false) => {
   onSnapshot(postsCollectionQuery, (querySnapshot) => {
     const fbPosts = []
     querySnapshot.forEach((doc) => {
-      const post = {
-        id: doc.id,
-        title: doc.data().title,
-        done: doc.data().done,
-        age: doc.data().age,
-        price: doc.data().price,
-        genre: doc.data().genre,
-        performer: doc.data().performer,
-        time: doc.data().time,
-        venue: doc.data().venue,
-        info: doc.data().info,
-        url: doc.data().url,
-        imgURL:doc.data().imgURL
+
+      console.log(doc.data().genre == genre || genre == false)
+      console.log("online", doc.data().genre)
+      console.log("local", genre)
+      /* Genre */
+      if(doc.data().genre == genre || genre == false){
+        const post = {
+          id: doc.id,
+          title: doc.data().title,
+          done: doc.data().done,
+          age: doc.data().age,
+          price: doc.data().price,
+          genre: doc.data().genre,
+          performer: doc.data().performer,
+          time: doc.data().time,
+          venue: doc.data().venue,
+          info: doc.data().info,
+          url: doc.data().url,
+          imgURL:doc.data().imgURL
+        }
+        fbPosts.push(post)
       }
-      fbPosts.push(post)
     })
     posts.value = fbPosts
   })
+}
+
+onMounted(() => {
+  loadData()
 })
 
 //filter
-
+const changeCategory = (genre) => {
+  console.log("Dis one", genre)
+  loadData(genre)
+}
 
 </script>
 
