@@ -3,8 +3,8 @@
   <div class="hero d-flex justify-content-center align-items-center">
     <div class="hero-text-box col-10 d-flex flex-column">
       <h1>KANTEN</h1>
-      <p class="p-hero">ESBJERGS NYE KULTURFÆLLESKAB</p>
-      <div class="hero-btn-container">
+      <p class="p-hero" style="text-align: end;">ESBJERGS NYE KULTURFÆLLESKAB</p>
+      <div class="hero-btns">
         <RouterLink to="/events"><button class="hero-btn">SE EVENTS</button></RouterLink>
         <RouterLink to="/volunteer"><button class="hero-btn">BLIV FRIVILLIG</button></RouterLink>
       </div>
@@ -48,14 +48,14 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
@@ -109,8 +109,14 @@ const isActive = ref(true)
     background-repeat: no-repeat;
   }
 
-  .hero-btn:first-of-type {
-    margin-right: 1rem;
+  .hero-btns {
+    text-align: end;
+    margin-bottom: 1rem;
+  }
+
+  .hero-btn {
+    margin-bottom: 0.4rem;
+    margin-left: 1rem;
   }
 
   .hero-text-box {
@@ -122,12 +128,6 @@ const isActive = ref(true)
     padding: 8rem 0;
   }
 
-  @media (max-width: 768px) {
-    .hero-text-box {
-      align-items: start;
-    }
-  }
-
   @media (max-width: 576px) {
     .box {
       flex-direction: column;
@@ -137,6 +137,17 @@ const isActive = ref(true)
     .box-img {
       display: flex;
       justify-content: center;
+    }
+
+    .hero-btn {
+      margin-bottom: 0.4rem;
+      margin-left: 1rem;
+    }
+  }
+
+  @media (max-width: 310px) {
+    .hero-btn {
+      margin-left: 0;
     }
   }
 </style>

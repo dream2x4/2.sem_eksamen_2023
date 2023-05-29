@@ -40,22 +40,22 @@
 <div class="footer d-flex flex-column align-items-center">
   <div class="col-10">
 
-    <div class="d-flex" style="gap: 1rem;">
-      <div style="width: 25%;">
+    <div class="footer-box d-flex" style="gap: 1rem;">
+      <div class="inner-footer-box">
         <h3>KANTEN</h3>
         <p class="p-footer">Gl Novrupvej 14. 6705 Esbjerg Ø</p>
         <p class="p-footer">Tlf. +45 28 97 11 85</p>
         <p class="p-footer">E-mail: musikforeningenkanten@gmail.com</p>
       </div>
 
-      <div class="d-flex flex-column" style="width: 25%;">
+      <div class="inner-footer-box d-flex flex-column">
         <h3>ASSOCIEREDE</h3>
         <a href="https://www.esbjerg.dk/" class="footer-link">Esbjerg Kommune</a>
         <a href="https://www.kuuf.dk/" class="footer-link">KUUF</a>
         <a href="https://www.husetesbjerg.dk/" class="footer-link">Huset Esbjerg</a>
       </div>
 
-      <div style="width: 25%;" class="d-flex flex-column">
+      <div class="inner-footer-box  d-flex flex-column">
         <h3>LINKS</h3>
         <RouterLink to="/" class="footer-link">Hjem</RouterLink>
         <RouterLink to="/about" class="footer-link">Om os</RouterLink>
@@ -65,7 +65,7 @@
       </div>
 
       <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup" style="width: 25%;">
+      <div class="inner-footer-box" id="mc_embed_signup">
           <form action="https://gmail.us11.list-manage.com/subscribe/post?u=123d7e5a3eab6ce581403b28d&amp;id=be82a48b18&amp;f_id=002eb8e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
               <div id="mc_embed_signup_scroll">
               <h3>TILMELD NYHEDSBREV</h3>
@@ -133,6 +133,9 @@ const handleSignOut = () => {
 </script>
 
 <style scoped>
+
+/* Navbar */
+
 header {
   width: 100%;
 
@@ -232,6 +235,8 @@ nav a:first-of-type {
   color: var(--vt-c-purple);
 }
 
+/* Footer */
+
 .p-footer {
   font-size: 1rem;
   margin-bottom: 0.4rem;
@@ -240,6 +245,15 @@ nav a:first-of-type {
 .footer {
   padding: 4rem 0 0 0;
   background-color: var(--vt-c-black);
+}
+
+.footer-box {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inner-footer-box {
+  width: 23%;
 }
 
 .footer-link {
@@ -276,14 +290,32 @@ nav a:first-of-type {
   border: none;
 }
 
+/* Scale */
+
+@media (max-width: 992px) {
+
+  .inner-footer-box {
+    width: 48%;
+  }
+}
+
 @media (max-width: 768px) {
   nav a {
     font-size: 1.2rem;
   }
+
+  .logo-img {
+    height: 72px;
+  }
 }
 
 @media (max-width: 540px) {
-  
+  .logo-img {
+    height: 54px;
+  }
+  .footer-box {
+    flex-direction: column-reverse;
+  }
 }
 
 </style>

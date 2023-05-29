@@ -5,7 +5,7 @@
       <h1>EVENTS</h1>
 
       <!-- Filter -->
-      <div class="filter-box d-flex justify-content-center" style="gap: 1rem; margin: 2rem 0;">
+      <div class="filter-box d-flex justify-content-center justify-content-between" style="margin: 2rem 0;">
         <button type="button" class="filter-btn All" @click="$event => changeCategory('False')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;"></button>
         <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;"></button>
@@ -70,7 +70,7 @@
 
   <!-- Gallery -->
 
-  <div class="event-gallery d-flex justify-content-center align-items-center" id="gallery">
+  <div class="box d-flex justify-content-center align-items-center" id="gallery">
     <div class="box-img col-10">
       <h2 class="h2-box">GALLERI</h2>
     </div>
@@ -181,11 +181,22 @@ const changeCategory = (genre) => {
       text-align: center;
   }
 
+  .event-btn {
+    margin-bottom: 0.4rem;
+    margin-left: 1rem;
+  }
+
   /* Filter */
+
+  .filter-box {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
   .filter-btn {
     padding: 0;
     background-color: transparent;
+    width: 14%;
   }
 
   .filter-btn:hover {
@@ -231,6 +242,12 @@ const changeCategory = (genre) => {
     padding: 8rem 0;
   }
 
+  @media (max-width: 768px) {
+    .filter-btn {
+      width: 31%;
+    }
+  }
+
   @media (max-width: 576px) {
     .box {
       flex-direction: column;
@@ -240,6 +257,12 @@ const changeCategory = (genre) => {
     .box-img {
       display: flex;
       justify-content: center;
+    }
+
+    @media (max-width: 310px) {
+      .event-btn {
+        margin-left: 0;
+      }
     }
   }
 </style>
