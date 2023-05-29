@@ -5,13 +5,13 @@
       <h1>EVENTS</h1>
 
       <!-- Filter -->
-      <div class="filter-box d-flex justify-content-center justify-content-between" style="margin: 2rem 0;">
-        <button type="button" class="filter-btn All" @click="$event => changeCategory('False')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Gæst')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;"></button>
-        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gaest_logo.png" alt="" style="width: 100%;"></button>
+      <div class="filter-box d-flex justify-content-center" style="margin: 2rem 0;">
+        <button type="button" class="filter-btn All" @click="$event => changeCategory('False')"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;" data-id="all"></button>
+        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;" data-id="deft"></button>
+        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;" data-id="x-mas"></button>
+        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Gæst')" value="Guest"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;" data-id="mana"></button>
+        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Xmas')" value="Web"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;" data-id="vertex"></button>
+        <button type="button" class="filter-btn Deft" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Gaest_logo.png" alt="" style="width: 100%;" data-id="guest"></button>
       </div>
 
       <p class="p-hero">OPLEV MUSIK UD OVER KANTEN!</p>
@@ -19,13 +19,49 @@
   </div>
 
   <!-- Info -->
-  <div class="box d-flex justify-content-center align-items-center">
+  <article class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
       <img src="../assets/img/om_Kanten.png" alt="" style="width: 90%;">
     </div>
     <div class="box-text col-10 col-sm-6">
-      <h2 class="h2-box">EVENTS</h2>
-      <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+      <div class="event-content">
+        <!-- single item -->
+        <div class="content active" id="all" >
+          <h2 class="h2-box">EVENTS</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+        <!-- single item -->
+        <div class="content" id="deft" >
+          <h2 class="h2-box">DEFT</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+        <!-- single item -->
+        <div class="content" id="x-mas" >
+          <h2 class="h2-box">X-MASSIVE DUB</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+        <!-- single item -->
+        <div class="content" id="mana" >
+          <h2 class="h2-box">MANA CLUB</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+        <!-- single item -->
+        <div class="content" id="vertex">
+          <h2 class="h2-box">VERTEX</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+        <!-- single item -->
+        <div class="content" id="guest" >
+          <h2 class="h2-box">GÆST</h2>
+          <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+        </div>
+        <!-- end of single item -->
+      </div>
       <a href="#events">
         <button class="event-btn" >SE EVENTS ▼</button>
       </a>
@@ -33,7 +69,7 @@
         <button class="event-btn" >SE GALLERI ▼</button>
       </a>
     </div>
-  </div>
+  </article>
 
   <!-- Event Cards -->
   <div class="card-box d-flex justify-content-center align-items-center" id="events">
@@ -44,11 +80,10 @@
       :class="{ 'has-background-success-light' : post.done}"
       >
       <div class="card-content">
-        <div class="content">
+        <div class="event-content">
 
           <div>
             <p class="p-date">
-              {{ post.genre }}
               {{ post.time }}
             </p>
             <h3>
@@ -104,6 +139,31 @@ const router = useRouter()
 const redirect = (id) => {
   router.push("/eventdetail/" + id)
 }
+
+onMounted(() => {
+    const isActive = ref(true)
+    
+  //Tags
+    
+  //const about = document.querySelector('.about');
+  const btns = document.querySelectorAll('.filter-btn');
+  const articles = document.querySelectorAll('.content');
+      
+  let selected = 0;
+  let btn = 0;
+
+  for(let i = 0; i < btns.length; i++){
+    btns[i].addEventListener("click", () => {
+    changeSelected(i)
+    })
+  }
+
+  const changeSelected = (newSelected) => {
+    articles[selected].classList.remove("active")
+    articles[newSelected].classList.add("active")
+    selected = newSelected
+  }  
+})
 
 //Posts
 
@@ -213,6 +273,14 @@ const changeCategory = (genre) => {
 
   .event-btn:first-of-type {
     margin-right: 1rem;
+  }
+
+  /* hide content */
+  .content {
+    display: none;
+  }
+  .content.active {
+    display: block;
   }
 
   /* Card */
