@@ -219,6 +219,7 @@ onMounted(() => {
 .card-box {
     height: auto;
     padding: 8rem 0;
+    box-shadow: none;
 }
 
 .event-card {

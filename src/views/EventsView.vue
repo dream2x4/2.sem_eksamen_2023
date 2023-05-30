@@ -231,7 +231,7 @@ const changeCategory = (genre) => {
     height: 100vh;
     background-color: aqua;
 
-    background-image: url(../assets/img/hero_img.jpg);
+    background-image: url(../assets/img/events_hero_img.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
