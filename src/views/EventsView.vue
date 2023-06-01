@@ -19,7 +19,7 @@
   </div>
 
   <!-- Info -->
-  <article class="box d-flex justify-content-center align-items-start">
+  <article class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
       <img class="event-png active" src="../assets/img/event_all.png" alt="all" style="width: 90%;" id="all">
       <img class="event-png" src="../assets/img/event_deft.png" alt="deft" style="width: 90%;" id="deft">
@@ -72,7 +72,7 @@
         <!-- end of single item -->
       </div>
       <a href="#events">
-        <button class="event-btn" >SE EVENTS ▼</button>
+        <button class="event-btn" style="margin-right: 1rem;" >SE EVENTS ▼</button>
       </a>
       <a href="#gallery">
         <button class="event-btn" >SE GALLERI ▼</button>
@@ -255,7 +255,6 @@ const changeCategory = (genre) => {
 
   .event-btn {
     margin-bottom: 0.4rem;
-    margin-left: 1rem;
   }
 
   /* Filter */
@@ -281,10 +280,6 @@ const changeCategory = (genre) => {
 
   .filter-img:hover {
     transform: scale(1.05);
-  }
-
-  .event-btn:first-of-type {
-    margin-right: 1rem;
   }
 
   /* hide content */
