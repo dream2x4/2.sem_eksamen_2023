@@ -1,6 +1,7 @@
 <template>
   <!-- Hero -->
   <div class="hero d-flex justify-content-center align-items-center">
+    <video src="../assets/video/kanten_video.mp4" class="hero-video" autoplay loop muted plays-inline></video>
     <div class="hero-text-box col-10 d-flex flex-column">
       <h1 style="text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">KANTEN</h1>
       <p class="p-hero" style="text-align: end; text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">ESBJERGS NYE KULTURFÆLLESKAB</p>
@@ -15,7 +16,7 @@
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
-      <img src="../assets/img/om_Kanten.png" alt="" style="width: 90%;">
+      <img src="../assets/img/om_Kanten.png" alt="om_kanten" style="width: 90%;">
     </div>
     <div class="box-text col-10 col-sm-6">
       <h2 class="h2-box">OM KANTEN</h2>
@@ -108,11 +109,22 @@ const isActive = ref(true)
 <style scoped>
   .hero {
     height: 100vh;
+    
 
     background-image: url(../assets/img/hero_img.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  .hero-video {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width:100%;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
   }
 
   .hero-btns {
