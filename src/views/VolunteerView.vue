@@ -18,7 +18,7 @@
         
         <div class="box-card d-flex justify-content-center align-items-center">
             <div class="box-img col-10 col-sm-4">
-              <img src="../assets/img/frivillig.png" alt="" style="width: 90%;">
+              <img src="../assets/img/frivillig.png" alt="volunteer" style="width: 90%;">
             </div>
             <div class="box-text col-10 col-sm-6">
                 <h2 class="h2-box">OM FRIVILLIG</h2>
@@ -41,9 +41,8 @@
   <style scoped>
     .hero {
       height: 50vh;
-      background-color: aqua;
   
-      background-image: url(../assets/img/hero_img.jpg);
+      background-image: url(../assets/img/volunteer_hero_img.jpg);
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;

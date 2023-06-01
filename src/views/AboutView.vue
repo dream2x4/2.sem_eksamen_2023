@@ -10,7 +10,7 @@
             <div class="col-10 col-md-6">
                 <div class="about-content">
                     <!-- single item -->
-                    <div class="content active" id="history">
+                    <div class="content active" id="om">
                     <h2 class="h2-box">OM OS</h2>
                     <p>
                         Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.
@@ -18,49 +18,36 @@
                     </div>
                     <!-- end of single item -->
                     <!-- single item -->
-                    <div class="content" id="vision">
+                    <div class="content" id="dj">
                     <h2 class="h2-box">BLIV DJ!</h2>
                     <p>
-                        Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
-                        crucifix offal deep v hella biodiesel. Church-key listicle
-                        polaroid put a bird on it chillwave palo santo enamel pin,
-                        tattooed meggings franzen la croix cray. Retro yr aesthetic four
-                        loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
-                        Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
-                        Roof party hammock master cleanse pop-up truffaut, bicycle
-                        rights skateboard affogato readymade sustainable deep v
-                        live-edge schlitz narwhal.
+                        Hos Kanten får du den helt unikke mulighed at blive dj, oplært af talentfulde dj’s fra Esbjergs musik undergrund. Måske har du allerede hørt nogen af dem spille på Kanten, og fyre en fest af. Se frem til at udvide dit talent indenfor musik, måske bliver det en dag dig der optræder på Kanten. Lær hvordan man skaber beats og remixer sange, for at skabe uforglemmelige musik oplevelser.
                     </p>
                     </div>
                     <!-- end of single item -->
                     <!-- single item -->
-                    <div class="content" id="goals">
+                    <div class="content" id="sted">
                     <h2 class="h2-box">HVOR ER VI?</h2>
                     <p>
-                        Chambray authentic truffaut, kickstarter brunch taxidermy vape
-                        heirloom four dollar toast raclette shoreditch church-key.
-                        Poutine etsy tote bag, cred fingerstache leggings cornhole
-                        everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
-                        swag, mixtape hashtag marfa readymade direct trade man braid
-                        cold-pressed roof party. Small batch adaptogen coloring book
-                        heirloom. Letterpress food truck hammock literally hell of wolf
-                        beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
-                        banh mi salvia venmo photo booth quinoa chicharrones.
+                        Kanten er lokaliseret i Esbjerg Midtby i ungdomshuset Huset. Huset er lokaliseret mellem Museum pladsen og Esbjergs bibliotek, på adressen Finsensgade 1 6700 Esbjerg. Kanten ligger på 1 sal i Husets bygning. Kantens lokale indeholder en bar, en scene, dj-pult og selvfølgeligvis plads til at bryde ud i dans.
+                    </p>
+                    <p>
+                        Kraftværket, som er Kantens øvelokaler og indspilningsstudie, er placeret i Esbjerg Øst. Mere specifikt på adressen Gl Novrupvej 14, 6705 Esbjerg Denmark. Her er der rimelig med instrumenter, mikrofoner og alt andet du skal bruge for at forbedre og indspille din musik.
                     </p>
                     </div>
                     <!-- end of single item -->
                 </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-10 col-md-3 d-flex align-items-center">
+            <div class="col-10 col-md-3 d-flex align-items-start">
                 <div class="div">
-                    <button class="tab-btn active d-flex align-items-center" data-id="history">
+                    <button class="tab-btn active d-flex align-items-center" data-id="om">
                         ◀ OM OS
                     </button>
-                    <button class="tab-btn" data-id="vision">
+                    <button class="tab-btn" data-id="dj">
                         ◀ BLIV DJ
                     </button>
-                    <button class="tab-btn" data-id="goals">
+                    <button class="tab-btn" data-id="sted">
                         ◀   HVOR ER VI?
                     </button>
                 </div>
@@ -72,8 +59,8 @@
   
     <div class="card-box d-flex flex-column justify-content-center align-items-center">
         
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="col-10 col-sm-6">
+        <div class="kv-box d-flex justify-content-center">
+            <div class="col-10 col-md-6">
                 <h2 class="h2-box">KRÆFTVÆRKET</h2>
                 <p class="p-box">Esbjerg har i flere år manglet gængse øvelokaler med mulighed for indspilning, og her vil Kanten give muligheden for at benytte sig af et lydstudie samt et øvelokale af høj kvalitet. I kraft af Kantens vision om at hjælpe det musikalske vækstlag med at skabe musik, så vil der tilbydes en lydtekniker som ifølge aftale kan undervise i lydstudieteknik - alt efter behov. Med Kraftværkets placering i Østerbyen vil vi løfte interessen for musik, særligt for de lokale unge. Det vil vi f.eks. gøre med undervisning i øjenhøjde og med kendskab til unge i området. Kraftværket kan benyttes af alle der spiller, eller gerne vil spille musik.</p>
 
@@ -101,8 +88,8 @@
                     <p class="p-box">musikforeningenkanten@gmail.com</p>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="p-box">Adresse:</p>
-                    <p class="p-box">GL Novrupvej 14, 6705 Esbjerg Ø</p>
+                    <p class="p-box mb-0">Adresse:</p>
+                    <p class="p-box mb-0">GL Novrupvej 14, 6705 Esbjerg Ø</p>
                 </div>
             </div>
             <div class="kv-img col-4"></div>
@@ -168,9 +155,8 @@ onMounted(() => {
   <style scoped>
     .hero {
       height: 50vh;
-      background-color: aqua;
   
-      background-image: url(../assets/img/hero_img.jpg);
+      background-image: url(../assets/img/about_hero_img.jpg);
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -184,6 +170,19 @@ onMounted(() => {
     .card-box {
         height: auto;
         padding: 8rem 0;
+        display: table;
+    }
+
+    .kv-box {
+        gap: 2rem;
+    }
+
+    .kv-img {
+        display: table-cell;
+        background-image: url(../assets/img/kræftværket.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 
 /* tags */
@@ -258,6 +257,10 @@ About
         flex-direction: column;
         align-items: center;
     }
+
+    .kv-img {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -268,10 +271,6 @@ About
     .card-box {
         flex-direction: column;
         justify-content: center;
-    }
-
-    .kv-img {
-        display: none;
     }
 
     .maps {

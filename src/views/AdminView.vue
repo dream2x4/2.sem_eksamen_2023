@@ -42,9 +42,9 @@
               placeholder="Tilføj pris"
               >
           </p>
-          <p class="control is-expanded mb-2">
+          <p class="control is-expanded mt-3 mb-2">
               <select v-model="newEventGenre" >
-                <option value="">Ingen</option>
+                <option value="">Kategori</option>
                 <option value="Deft">Deft</option>
                 <option value="Xmas">Xmas</option>
                 <option value="Mana">Mana</option>
@@ -420,9 +420,8 @@ uploadTask.on('state_changed',
 
   .hero {
     height: 50vh;
-    background-color: aqua;
   
-    background-image: url(../assets/img/hero_img.jpg);
+    background-image: url(../assets/img/about_hero_img.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -432,6 +431,10 @@ uploadTask.on('state_changed',
     height: auto;
     padding: 8rem 0;
     gap: 3rem;
+  }
+
+  select:focus, .focus {
+    outline: none;
   }
 
   .card {

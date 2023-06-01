@@ -2,11 +2,11 @@
   <!-- Hero -->
   <div class="hero d-flex justify-content-center align-items-center">
     <div class="hero-text-box col-10 d-flex flex-column">
-      <h1>KANTEN</h1>
-      <p class="p-hero" style="text-align: end;">ESBJERGS NYE KULTURFÆLLESKAB</p>
+      <h1 style="text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">KANTEN</h1>
+      <p class="p-hero" style="text-align: end; text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">ESBJERGS NYE KULTURFÆLLESKAB</p>
       <div class="hero-btns">
-        <RouterLink to="/events"><button class="hero-btn">SE EVENTS</button></RouterLink>
-        <RouterLink to="/volunteer"><button class="hero-btn">BLIV FRIVILLIG</button></RouterLink>
+        <RouterLink to="/events"><button class="hero-btn" style="box-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">SE EVENTS</button></RouterLink>
+        <RouterLink to="/volunteer"><button class="hero-btn" style="box-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">BLIV FRIVILLIG</button></RouterLink>
       </div>
     </div>
   </div>
@@ -39,28 +39,35 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+    <RouterLink to="/events">
+      <div class="carousel-item active">
+        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-end">
+          <h5>EVENTS</h5>
+          <p>Se kommende events & køb billeter!</p>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+    </RouterLink>
+    <RouterLink to="/about">
+      <div class="carousel-item">
+        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-end">
+          <h5>BLIV DJ</h5>
+          <p>Få mulighed for undervisning eller book en studie!</p>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+    </RouterLink>
+    <RouterLink to="/volunteer">
+      <div class="carousel-item">
+        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-end">
+          <h5>BLIV FRIVILLIG</h5>
+          <p>Bliv frivillig og være med til at skabe uforglemmelige oplevelser!</p>
+        </div>
       </div>
-    </div>
+    </RouterLink>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -80,11 +87,11 @@
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
-      <img src="../assets/img/om_Kanten.png" alt="" style="width: 90%;">
+      <img src="../assets/img/om_Kanten.png" alt="about" style="width: 90%;">
     </div>
     <div class="box-text col-10 col-sm-6">
       <h2 class="h2-box">MEDLEMSKAB</h2>
-      <p class="p-box">Kanten bliver Esbjergs nye kulturfællesskab drevet af foreningen Kanten. Vores vision er at skabe en platform for det kreative vækstlag, som mangler en synlig plads i Esbjergs kulturliv. Gennem denne platform ønsker vi at støtte de fællesskaber der opstår af spirende kreative miljøer. Kanten vil give det underrepræsenterede vækstlag en scene at stå på – dette gør vi gennem en bred vifte af projekter der bl.a. indeholder events, klubaftener, øvelokaler og et lydstudie.</p>
+      <p class="p-box">Bliv medlem hos Kanten. Som medlem hos os sparer du penge på uforglemmelige musik events i Esbjerg. Vær med når vi fyrer en fest af med vores live djs, der spiller alt fra hiphop til house musik. Vær med behind the scene, og se hvordan Kanten Crew gør sig klar til Kantens events. Imens kan du nyde billigere drinks og øl, fra Kantens helt egen bar. Få muligheden for at være med til eksklusive events kun for medlemmer. Vær med til at bidrage til Kanten og tilslut dig vores unikke fællesskab, hvor der er plads til alle, for kun 90 kr. årligt.  </p>
       <RouterLink to="/membership"><button>BLIV MEDLEM</button></RouterLink>
     </div>
   </div>
@@ -101,7 +108,6 @@ const isActive = ref(true)
 <style scoped>
   .hero {
     height: 100vh;
-    background-color: aqua;
 
     background-image: url(../assets/img/hero_img.jpg);
     background-size: cover;
@@ -126,6 +132,15 @@ const isActive = ref(true)
   .box {
     height: auto;
     padding: 8rem 0;
+  }
+
+  /* Carousel */
+  .carousel-control-prev:hover {
+    background-color: transparent;
+  }
+
+  .carousel-control-next:hover {
+    background-color: transparent;
   }
 
   @media (max-width: 576px) {
