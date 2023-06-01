@@ -18,7 +18,7 @@
         
         <div class="box-card d-flex justify-content-center align-items-center">
             <div class="box-img col-10 col-sm-4">
-              <img src="../assets/img/om_Kanten.png" alt="about" style="width: 90%;">
+              <img src="../assets/img/medlemskab.png" alt="membership" style="width: 90%;">
             </div>
             <div class="box-text col-10 col-sm-6">
                 <h2 class="h2-box">OM MEDLEMSKAB</h2>

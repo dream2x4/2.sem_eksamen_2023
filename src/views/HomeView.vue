@@ -16,7 +16,7 @@
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
-      <img src="../assets/img/om_Kanten.png" alt="om_kanten" style="width: 90%;">
+      <img src="../assets/img/om_Kanten.png" alt="about" style="width: 90%;">
     </div>
     <div class="box-text col-10 col-sm-6">
       <h2 class="h2-box">OM KANTEN</h2>
@@ -53,7 +53,7 @@
     </RouterLink>
     <RouterLink to="/about">
       <div class="carousel-item">
-        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <img src="../assets/img/dj_img.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block text-end">
           <h5>BLIV DJ</h5>
           <p>Få mulighed for undervisning eller book en studie!</p>
@@ -62,7 +62,7 @@
     </RouterLink>
     <RouterLink to="/volunteer">
       <div class="carousel-item">
-        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <img src="../assets/img/volunteer_img.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block text-end">
           <h5>BLIV FRIVILLIG</h5>
           <p>Bliv frivillig og være med til at skabe uforglemmelige oplevelser!</p>
@@ -88,7 +88,7 @@
 
   <div class="box d-flex justify-content-center align-items-center">
     <div class="box-img col-10 col-sm-4">
-      <img src="../assets/img/om_Kanten.png" alt="about" style="width: 90%;">
+      <img src="../assets/img/medlemskab.png" alt="membership" style="width: 90%;">
     </div>
     <div class="box-text col-10 col-sm-6">
       <h2 class="h2-box">MEDLEMSKAB</h2>
