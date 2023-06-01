@@ -191,6 +191,10 @@ input:focus, .input:focus {
     font-size: 1.4rem;
   }
 
+  h5 {
+    font-size: 2rem;
+  }
+
   p{
     font-size: 1rem;
   }
