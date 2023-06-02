@@ -208,6 +208,7 @@ onMounted(() => {
 
 .hero {
     height: 50vh;
+    background-color: var(--vt-c-black);
   
     background-image: url(../assets/img/membership_hero_img.jpg);
     background-size: cover;

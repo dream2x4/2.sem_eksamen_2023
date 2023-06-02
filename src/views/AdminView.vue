@@ -420,6 +420,7 @@ uploadTask.on('state_changed',
 
   .hero {
     height: 50vh;
+    background-color: var(--vt-c-black);
   
     background-image: url(../assets/img/about_hero_img.jpg);
     background-size: cover;

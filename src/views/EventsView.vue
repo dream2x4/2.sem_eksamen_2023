@@ -6,12 +6,12 @@
 
       <!-- Filter -->
       <div class="filter-box d-flex justify-content-center" style="margin: 2rem 0;">
-        <button type="button" class="filter-btn All" @click="$event => changeCategory(false)"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;" data-id="all"></button>
-        <button type="button" class="filter-btn Mana" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;" data-id="deft"></button>
-        <button type="button" class="filter-btn Vertex" @click="$event => changeCategory('Xmas')" value="Xmas"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;" data-id="x-mas"></button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;" data-id="mana"></button>
-        <button type="button" class="filter-btn Xmas" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;" data-id="vertex"></button>
-        <button type="button" class="filter-btn Guest" @click="$event => changeCategory('Gæst')" value="Guest"><img class="filter-img" src="../assets/img/Guest_logo.png" alt="" style="width: 100%;" data-id="guest"></button>
+        <a href="#event-info" type="button" class="filter-btn All" @click="$event => changeCategory(false)"><img class="filter-img" src="../assets/img/SeAlle_logo.png" alt="" style="width: 100%;" data-id="all"></a>
+        <a href="#event-info" type="button" class="filter-btn Mana" @click="$event => changeCategory('Deft')" value="Deft"><img class="filter-img" src="../assets/img/Deft_logo.png" alt="" style="width: 100%;" data-id="deft"></a>
+        <a href="#event-info" type="button" class="filter-btn Vertex" @click="$event => changeCategory('Xmas')" value="Xmas"><img class="filter-img" src="../assets/img/Xmassive_logo.png" alt="" style="width: 100%;" data-id="x-mas"></a>
+        <a href="#event-info" type="button" class="filter-btn Guest" @click="$event => changeCategory('Mana')" value="Mana"><img class="filter-img" src="../assets/img/Manaclub_logo.png" alt="" style="width: 100%;" data-id="mana"></a>
+        <a href="#event-info" class="filter-btn Xmas" @click="$event => changeCategory('Vertex')" value="Vertex"><img class="filter-img" src="../assets/img/Vertex_logo.png" alt="" style="width: 100%;" data-id="vertex"></a>
+        <a href="#event-info" type="button" class="filter-btn Guest" @click="$event => changeCategory('Gæst')" value="Guest"><img class="filter-img" src="../assets/img/Guest_logo.png" alt="" style="width: 100%;" data-id="guest"></a>
       </div>
 
       <p class="p-hero" style="text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">OPLEV MUSIK UD OVER KANTEN!</p>
@@ -19,7 +19,7 @@
   </div>
 
   <!-- Info -->
-  <article class="box d-flex justify-content-center align-items-center">
+  <article class="box d-flex justify-content-center align-items-center" id="event-info">
     <div class="box-img col-10 col-sm-4">
       <img class="event-png active" src="../assets/img/event_all.png" alt="all" style="width: 90%;" id="all">
       <img class="event-png" src="../assets/img/event_deft.png" alt="deft" style="width: 90%;" id="deft">
@@ -242,6 +242,7 @@ const changeCategory = (genre) => {
 <style scoped>
 .hero {
     height: 100vh;
+    background-color: var(--vt-c-black);
 
     background-image: url(../assets/img/events_hero_img.jpg);
     background-size: cover;

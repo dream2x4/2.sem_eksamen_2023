@@ -1,7 +1,7 @@
 <template>
   <!-- Hero -->
   <div class="hero d-flex justify-content-center align-items-center">
-    <video src="../assets/video/kanten_video.mp4" class="hero-video" autoplay loop muted plays-inline></video>
+    <video src="../assets/video/kanten_video.mp4" class="hero-video" autoplay loop muted control playsinline></video>
     <div class="hero-text-box col-10 d-flex flex-column">
       <h1 style="text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">KANTEN</h1>
       <p class="p-hero" style="text-align: end; text-shadow: 0 0 1.6rem var(--vt-c-black-transparent);">ESBJERGS NYE KULTURFÆLLESKAB</p>
@@ -44,28 +44,31 @@
   <div class="carousel-inner">
     <RouterLink to="/events">
       <div class="carousel-item active">
-        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="...">
+        <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="event">
         <div class="carousel-caption d-none d-md-block text-end">
-          <h5>EVENTS</h5>
-          <p>Se kommende events & køb billeter!</p>
+          <h5>SE EVENTS</h5>
+          <p style="color: var(--vt-c-white-soft);">Se kommende events & køb billeter!</p>
+          <button>LÆS MERE</button>
         </div>
       </div>
     </RouterLink>
     <RouterLink to="/about">
       <div class="carousel-item">
-        <img src="../assets/img/dj_img.jpg" class="d-block w-100" alt="...">
+        <img src="../assets/img/dj_img.jpg" class="d-block w-100" alt="dj">
         <div class="carousel-caption d-none d-md-block text-end">
           <h5>BLIV DJ</h5>
-          <p>Få mulighed for undervisning eller book en studie!</p>
+          <p style="color: var(--vt-c-white-soft);">Få mulighed for undervisning eller book en studie!</p>
+          <button>LÆS MERE</button>
         </div>
       </div>
     </RouterLink>
     <RouterLink to="/volunteer">
       <div class="carousel-item">
-        <img src="../assets/img/volunteer_img.jpg" class="d-block w-100" alt="...">
+        <img src="../assets/img/volunteer_img.jpg" class="d-block w-100" alt="volunteer">
         <div class="carousel-caption d-none d-md-block text-end">
           <h5>BLIV FRIVILLIG</h5>
-          <p>Bliv frivillig og være med til at skabe uforglemmelige oplevelser!</p>
+          <p style="color: var(--vt-c-white-soft);">Bliv frivillig og være med til at skabe uforglemmelige oplevelser!</p>
+          <button>LÆS MERE</button>
         </div>
       </div>
     </RouterLink>
@@ -109,12 +112,8 @@ const isActive = ref(true)
 <style scoped>
   .hero {
     height: 100vh;
-    
 
-    background-image: url(../assets/img/hero_img.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-color: black;
   }
 
   .hero-video {

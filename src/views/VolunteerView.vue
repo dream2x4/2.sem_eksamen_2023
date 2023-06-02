@@ -41,6 +41,7 @@
   <style scoped>
     .hero {
       height: 50vh;
+      background-color: var(--vt-c-black);
   
       background-image: url(../assets/img/volunteer_hero_img.jpg);
       background-size: cover;

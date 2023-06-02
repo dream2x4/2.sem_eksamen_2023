@@ -21,7 +21,7 @@
                     <div class="content" id="dj">
                     <h2 class="h2-box">BLIV DJ!</h2>
                     <p>
-                        Hos Kanten får du den helt unikke mulighed at blive dj, oplært af talentfulde dj’s fra Esbjergs musik undergrund. Måske har du allerede hørt nogen af dem spille på Kanten, og fyre en fest af. Se frem til at udvide dit talent indenfor musik, måske bliver det en dag dig der optræder på Kanten. Lær hvordan man skaber beats og remixer sange, for at skabe uforglemmelige musik oplevelser.
+                        Hos Kanten får du den helt unikke mulighed at blive dj, oplært af talentfulde djs fra Esbjergs musik undergrund. Måske har du allerede hørt nogen af dem spille på Kanten, og fyre en fest af. Se frem til at udvide dit talent indenfor musik, måske bliver det en dag dig der optræder på Kanten. Lær hvordan man skaber beats og remixer sange, for at skabe uforglemmelige musik oplevelser.
                     </p>
                     </div>
                     <!-- end of single item -->
@@ -155,6 +155,7 @@ onMounted(() => {
   <style scoped>
     .hero {
       height: 50vh;
+      background-color: var(--vt-c-black);
   
       background-image: url(../assets/img/about_hero_img.jpg);
       background-size: cover;

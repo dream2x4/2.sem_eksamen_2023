@@ -22,7 +22,7 @@
             </div>
             <div class="box-text col-10 col-sm-6">
                 <h2 class="h2-box">OM MEDLEMSKAB</h2>
-                <p class="p-box">Bliv medlem hos Kanten. Som medlem hos os sparer du penge på uforglemmelige musik events i Esbjerg. Vær med når vi fyrer en fest af med vores live djs, der spiller alt fra hiphop til house musik. Vær med behind the scene, og se hvordan Kanten Crew gør sig klar til Kantens events. Imens kan du nyde billigere drinks og øl, fra Kantens helt egen bar. Få muligheden for at være med til eksklusive events kun for medlemmer. Vær med til at bidrage til Kanten og tilslut dig vores unikke fællesskab, hvor der er plads til alle, for kun 90kr årligt.</p>
+                <p class="p-box">Bliv medlem hos Kanten. Som medlem hos os sparer du penge på uforglemmelige musik events i Esbjerg. Vær med når vi fyrer en fest af med vores live djs, der spiller alt fra hiphop til house musik. Vær med behind the scene, og se hvordan Kanten Crew gør sig klar til Kantens events. Imens kan du nyde billigere drinks og øl, fra Kantens helt egen bar. Få muligheden for at være med til eksklusive events kun for medlemmer. Vær med til at bidrage til Kanten og tilslut dig vores unikke fællesskab, hvor der er plads til alle, for kun 90 kr. årligt.</p>
                 <button>BLIV MEDLEM</button>
             </div>
         </div>
@@ -41,6 +41,7 @@
   <style scoped>
     .hero {
       height: 50vh;
+      background-color: var(--vt-c-black);
   
       background-image: url(../assets/img/membership_hero_img.jpg);
       background-size: cover;
