@@ -45,31 +45,19 @@
     <RouterLink to="/events">
       <div class="carousel-item active">
         <img src="../assets/img/event_img.jpg" class="d-block w-100" alt="event">
-        <div class="carousel-caption d-none d-md-block text-end">
-          <h5>SE EVENTS</h5>
-          <p style="color: var(--vt-c-white-soft);">Se kommende events & køb billeter!</p>
-          <button>LÆS MERE</button>
-        </div>
+        <div class="carousel-caption d-none d-md-block text-end"></div>
       </div>
     </RouterLink>
     <RouterLink to="/about">
       <div class="carousel-item">
         <img src="../assets/img/dj_img.jpg" class="d-block w-100" alt="dj">
-        <div class="carousel-caption d-none d-md-block text-end">
-          <h5>BLIV DJ</h5>
-          <p style="color: var(--vt-c-white-soft);">Få mulighed for undervisning eller book en studie!</p>
-          <button>LÆS MERE</button>
-        </div>
+        <div class="carousel-caption d-none d-md-block text-end"></div>
       </div>
     </RouterLink>
     <RouterLink to="/volunteer">
       <div class="carousel-item">
         <img src="../assets/img/volunteer_img.jpg" class="d-block w-100" alt="volunteer">
-        <div class="carousel-caption d-none d-md-block text-end">
-          <h5>BLIV FRIVILLIG</h5>
-          <p style="color: var(--vt-c-white-soft);">Bliv frivillig og være med til at skabe uforglemmelige oplevelser!</p>
-          <button>LÆS MERE</button>
-        </div>
+        <div class="carousel-caption d-none d-md-block text-end"></div>
       </div>
     </RouterLink>
   </div>
